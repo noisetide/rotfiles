@@ -124,7 +124,7 @@ in {
           [
             {
               uuid = "2cbb65e9-088b-48d8-be9e-0f7b4d0c0b62";
-              name = "rotteegher";
+              name = "sqwq";
               level = 4;
               bypassesPlayerLimit = true;
             }
@@ -298,7 +298,7 @@ in {
           [
             {
               uuid = "2cbb65e9-088b-48d8-be9e-0f7b4d0c0b62";
-              name = "rotteegher";
+              name = "sqwq";
               level = 4;
               bypassesPlayerLimit = true;
             }

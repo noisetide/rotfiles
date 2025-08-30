@@ -57,6 +57,7 @@ in
         files = cfg.home.files ++ hmPersistCfg.home.files;
         directories = [
           "pr"
+          "nt"
           ".cache/dconf"
           ".config/dconf"
         ] ++ cfg.home.directories ++ hmPersistCfg.home.directories;

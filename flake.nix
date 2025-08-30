@@ -1,5 +1,5 @@
 {
-  description = "Rotteegher's rotfiles, - are configuration dotfiles which are managed via NixOS and home-manager";
+  description = "Sawako's rotfiles, - are configuration dotfiles which are managed via NixOS and home-manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
