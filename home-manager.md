@@ -1,4 +1,4 @@
-# Rotteegher's Home Manager Config
+# Sawako's Home Manager Config
 
 ### Install Nix on Other Linux Distros
 
@@ -20,7 +20,7 @@ Substitute `desktop` with desired host
 ```sh
 mkdir -p ~/pr
 cd ~/pr
-git clone https://github.com/rotteegher/rotfiles
+git clone https://github.com/noisetide/rotfiles
 cd rotfiles
 nix-shell -p home-manager
 NIXPKGS_ALLOW_UNFREE=1 home-manager --extra-experimental-features "nix-command flakes" switch --flake ".#desktop"

@@ -133,7 +133,13 @@
           sysstat
           scrcpy
           cmake
-          python3
+          (python3.withPackages (
+            ps:
+              with ps; [
+                xdis
+              ]
+          ))
+
 
           gdb
           scanmem
