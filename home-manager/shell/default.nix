@@ -50,6 +50,7 @@
     ffmpeg
     woeusb
     fio
+    qrencode
     lshw
     cpulimit
     gnuplot

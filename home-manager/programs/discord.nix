@@ -7,6 +7,9 @@
   config = lib.mkIf config.custom.discord.enable {
     home.packages = [
       pkgs.zoom-us
+      pkgs.irssi
+      pkgs.weechat
+      pkgs.sic
       (pkgs.writeShellApplication {
         name = "discord-vesktop";
         text = ''
