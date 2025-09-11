@@ -40,7 +40,7 @@ lib.mkIf config.custom.llm.enable {
 
   ] ++ additionalPackages;
   # setup port forwarding
-  networking.firewall.allowedTCPPorts = [8080 9000 11434];
+  networking.firewall.allowedTCPPorts = [8080 9000 11434 8000];
   users.users.${user}.extraGroups = ["render" "video" "ollama"];
 
   hardware.nvidia-container-toolkit.enable = true;
@@ -58,6 +58,7 @@ lib.mkIf config.custom.llm.enable {
     home = "/var/lib/private/ollama";
     openFirewall = true;
     environmentVariables = {
+      OLLAMA_HOST = "0.0.0.0:11434";
       STATE_DIRECTORY = "/var/lib/private/ollama";
       OLLAMA_STATE_DIRECTORY = "/var/lib/private/ollama";
       HIP_VISIBLE_DEVICES = "0,1";
@@ -72,6 +73,8 @@ lib.mkIf config.custom.llm.enable {
       LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath additionalPackages}:$LD_LIBRARY_PATH";
     };
   };
+
+  systemd.services.ollama.environment.OLLAMA_HOST = lib.mkForce "0.0.0.0:11434";
 
   systemd.services.ollama = {
     serviceConfig = {

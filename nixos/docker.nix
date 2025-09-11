@@ -23,6 +23,9 @@ lib.mkIf (config.custom.docker.enable || config.custom.distrobox.enable) {
 
   # store docker images on zroot/cache
   custom.persist = {
+    home = {
+      directories = [ ".npm" ".local/share/docker" ];
+    };
     root = {
       cache = ["/var/lib/docker"];
     };

@@ -3,14 +3,6 @@ lib.mkMerge [
 (lib.mkIf config.custom.nginx.enable {
   services.nginx = {
     enable = true;
-    appendHttpConfig = ''
-      map $http_origin $cors_origin {
-        default                      "";
-        https://janitorai.com        https://janitorai.com;
-        https://www.janitorai.com    https://www.janitorai.com;
-        # add more allowed origins if needed
-      }
-    '';
     virtualHosts = {
       "192.168.1.101" = {
         listen = [
@@ -174,8 +166,5 @@ lib.mkMerge [
   #       auth_basic_user_file ${config.sops.secrets.ollama_apikey.path};
   #   '';
   # };  
-  # services.nginx.appendHttpConfig = lib.mkAfter ''
-  #   include ${config.sops.secrets.ollama_bearer.path};
-  # '';
 })
 ]
