@@ -27,42 +27,42 @@
       {
         display_name_output = "DP-4";
         mode = "5120x1440@144";
-        position = "1080x700";
+        position = "0x0";
         addreserved = "0, 0, 0, 0,";
         scale = 1.0;
         transform = 0;
-        workspace_names = [ "q" "w" "e"];
-        workspaces = [ 5 6 7];
+        workspace_names = [ "1" "2" "3" "q" "w" "e"];
+        workspaces = [ 1 2 3 5 6 7 ];
       }
-      {
-        display_name_output = "DP-3";
-        mode = "2560x1080@200";
-        position = "0x0";
-        addreserved = "600, 0, 0, 0,";
-        scale = 1.0;
-        transform = 3;
-        workspace_names = [ "a" "s" "d" ];
-        workspaces = [ 8 9 10 ];
-      }
+      # {
+      #   display_name_output = "DP-3";
+      #   mode = "2560x1080@200";
+      #   position = "0x0";
+      #   addreserved = "600, 0, 0, 0,";
+      #   scale = 1.0;
+      #   transform = 3;
+      #   workspace_names = [ "a" "s" "d" ];
+      #   workspaces = [ 8 9 10 ];
+      # }
       {
         display_name_output = "HDMI-A-4";
         mode = "2560x1600@60";
-        position = "2616x2140";
+        position = "1920x1440";
         addreserved = "0, 0, 0, 0,";
         scale = 3.2;
         transform = 0;
-        workspace_names = [ "c" "m" ];
-        workspaces = [ 11 12 ];
+        workspace_names = [ "z" "x" "c" ];
+        workspaces = [ 11 12 13 ];
       }
       {
         display_name_output = "DP-2";
         mode = "3440x1440@200";
-        position = "6200x-700";
+        position = "5120x-700";
         addreserved = "1800, 0, 0, 0";
         scale = 1.0;
         transform = 3;
-        workspace_names = [ "1" "2" "3" "4"];
-        workspaces = [ 1 2 3 4 ];
+        workspace_names = [ "4" "a" "s" "d"];
+        workspaces = [ 4 8 9 10 ];
       }
     ];
     terminal.size = 8;

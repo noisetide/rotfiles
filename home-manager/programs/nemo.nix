@@ -7,6 +7,7 @@
 }:
 {
   home.packages = with pkgs; [
+    krusader
     nemo-fileroller
     webp-pixbuf-loader # for webp thumbnails
     nemo-with-extensions
@@ -79,11 +80,12 @@
 
   wayland.windowManager.hyprland.settings = {
     # disable transparency for file delete dialog
-    windowrulev2 = [ "forcergbx,floating:1,class:(nemo)" ];
+    windowrulev2 = [ "forcergbx,floating:1,class:(nemo)" "forcergbx,floating:1,class:(org.kde.krusader)" ];
   };
 
   custom.persist = {
     home = {
+      files = [ ".config/krusaderrc" ];
       directories = [
         # folder preferences such as view mode and sort order
         ".local/share/gvfs-metadata"
