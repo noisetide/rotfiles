@@ -27,6 +27,8 @@ in lib.mkMerge [
     # directly maps to values in the [global] section of the copyparty config.
     # see `copyparty --help` for available options
     settings = {
+      ban-404 = false;
+      ban-403 = false;
       i = "0.0.0.0";
       # use lists to set multiple values
       p = [ 3210 3211 ];

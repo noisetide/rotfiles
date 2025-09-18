@@ -41,7 +41,7 @@ in
         "CTRL_SHIFT, Escape, exec, hypr-monitors"
 
         # reset input language
-        "$mod_SHIFT, z, exec, fcitx5-remote -s keyboard-jp"
+        # "$mod_SHIFT, z, exec, fcitx5-remote -s keyboard-jp"
 
         # lighting
         "$mod_CTRL, a, exec, hyprshade on blue-light-filter"
@@ -89,9 +89,11 @@ in
         "$mod, d, workspace, 10" # d for 10
 
         "$mod, -, workspace, 11" # -
-        "$mod, c, workspace, 11" # c for 11
+        "$mod, z, workspace, 11" # z for 11
 
-        "$mod, x, workspace, 12" # c for 12
+        "$mod, x, workspace, 12" # x for 12
+
+        "$mod, c, workspace, 13" # x for 12
 
         # Move active window to a workspace with mainMod + SHIFT
         # +
@@ -122,9 +124,11 @@ in
         "$mod_SHIFT, d, movetoworkspacesilent, 10" # d for 10
 
         "$mod_SHIFT, -, movetoworkspacesilent, 11" # 11
-        "$mod_SHIFT, c, movetoworkspacesilent, 11" # c for 11
+        "$mod_SHIFT, z, movetoworkspacesilent, 11" # z for 11
 
-        "$mod_SHIFT, x, movetoworkspacesilent, 12" # c for 12
+        "$mod_SHIFT, x, movetoworkspacesilent, 12" # x for 12
+
+        "$mod_SHIFT, c, movetoworkspacesilent, 13" # c for 13
 
         # "$mod_SHIFT, b, layoutmsg, swapwithmaster"
 
@@ -133,7 +137,7 @@ in
         "$mod_SHIFT_CTRL, l, workspace, m+1"
 
         # monocle mode
-        "$mod, z, fullscreen, 1"
+        "$mod, n, fullscreen, 1"
 
         # fullscreen
         "$mod, f, fullscreen, 0"
@@ -143,8 +147,6 @@ in
 
         # floating
         "$mod, g, togglefloating"
-
-        "$mod, n, swapactiveworkspaces, DP-2 DP-3"
 
         # sticky
         "$mod_CTRL, s, pin"

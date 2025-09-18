@@ -52,6 +52,8 @@
     fio
     qrencode
     lshw
+    kdiff3
+    krename
     cpulimit
     gnuplot
     llvmPackages.bintools-unwrapped
