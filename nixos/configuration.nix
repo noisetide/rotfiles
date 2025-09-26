@@ -17,13 +17,21 @@
       devices = [ "nodev" ];
       zfsSupport = true;
       efiSupport = true;
-      useOSProber = false;
+      useOSProber = true;
+      enableCryptodisk = true;
       default = "saved";
       theme = pkgs.custom.distro-grub-themes-nixos;
-      gfxmodeBios = "1920x1080";
-      gfxmodeEfi = "1920x1080";
+      gfxmodeBios = "5120x1440";
+      gfxmodeEfi = "5120x1440";
+
+      # for secure boot
+      extraInstallCommands = '' 
+        sbctl sign -s /boot/EFI/NixOS-boot/grubx64.efi || true
+      '';
     };
   };
+
+  environment.systemPackages = [ pkgs.sbctl ]; # for secure boot
 
   fonts.packages = config.hm.custom.fonts.packages;
 
