@@ -6,7 +6,7 @@
 }:
 {
   # Bootloader.
-  # boot.loader.systemd-boot.enable = false;
+  boot.loader.systemd-boot.enable = false;
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -23,11 +23,6 @@
       theme = pkgs.custom.distro-grub-themes-nixos;
       gfxmodeBios = "5120x1440";
       gfxmodeEfi = "5120x1440";
-
-      # for secure boot
-      extraInstallCommands = '' 
-        sbctl sign -s /boot/EFI/NixOS-boot/grubx64.efi || true
-      '';
     };
   };
 
