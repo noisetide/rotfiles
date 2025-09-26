@@ -117,7 +117,15 @@
     };
 
     custom.persist = {
-      home.directories = [ ".local/share/Steam" ".config/mangohud" ".config/unity3d" ".steam" ".paradoxlauncher" ".local/share/Paradox Interactive" ];
+      home.directories = [
+        ".local/share/Steam"
+        ".config/mangohud"
+        ".config/unity3d"
+        ".steam"
+        ".paradoxlauncher"
+        ".local/share/Paradox Interactive"
+        ".local/share/Space Station 14"
+      ];
     };
   };
 }

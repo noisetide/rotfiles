@@ -16,6 +16,7 @@
           # fcitx5-mozc
           fcitx5-anthy
           fcitx5-gtk
+          kdePackages.fcitx5-qt
         ];
       };
     };

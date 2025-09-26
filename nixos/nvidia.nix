@@ -63,6 +63,9 @@
         linuxHeaders
         libdrm
         libgbinder
+        icu
+        glfw
+        glfw-wayland
 
         mesa
         # swiftshader
@@ -72,6 +75,9 @@
     };
     environment.systemPackages = with pkgs; [
         displaylink
+        icu
+        glfw
+        glfw-wayland
         
         mesa
 

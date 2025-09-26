@@ -81,10 +81,17 @@ lib.mkMerge [
         locations = {
           "/" = {
             proxyPass = "http://127.0.0.1:3210";
+            extraConfig = ''
+              client_max_body_size 0;      # or 0 to disable the limit entirely
+              proxy_request_buffering off;    # stream the body, helpful for big uploads/streams    
+            '';
           };
           "/api" = {
             proxyPass = "http://127.0.0.1:11434";
             extraConfig = ''
+              client_max_body_size 0;      # or 0 to disable the limit entirely
+              proxy_request_buffering off;    # stream the body, helpful for big uploads/streams    
+
               proxy_hide_header Access-Control-Allow-Origin;
 
               # neutralize preflight noise to upstream
@@ -113,6 +120,9 @@ lib.mkMerge [
           "/v1" = {
             proxyPass = "http://127.0.0.1:11434";
             extraConfig = ''
+              client_max_body_size 0;      # or 0 to disable the limit entirely
+              proxy_request_buffering off;    # stream the body, helpful for big uploads/streams    
+
               proxy_hide_header Access-Control-Allow-Origin;
 
               # neutralize preflight noise to upstream
