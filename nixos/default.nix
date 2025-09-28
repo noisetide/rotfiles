@@ -123,7 +123,6 @@
           efibootmgr
           powertop
           powerstat
-          hibernate
           brightnessctl
           ddcutil
           smartmontools

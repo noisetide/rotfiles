@@ -118,12 +118,6 @@ in {
       # }
       # };
 
-      # touchscreen
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_cancel_ratio = 0.15;
-      };
-
       "$mod" = config.custom.hyprland.modkey;
 
       "$term" = "${config.custom.terminal.exec}";
