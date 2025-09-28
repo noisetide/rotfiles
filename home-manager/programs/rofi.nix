@@ -50,7 +50,7 @@ in
 {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
   };
 
   custom.shell.packages = {
@@ -58,7 +58,7 @@ in
     rofi-power-menu = pkgs.writeShellApplication {
       name = "rofi-power-menu";
       runtimeInputs = with pkgs; [
-        rofi-wayland
+        rofi
         custom.rofi-themes
       ];
       text = lib.replaceStrings [ "@theme@" ] [

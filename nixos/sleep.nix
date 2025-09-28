@@ -9,15 +9,6 @@
   boot.zfs.allowHibernation = true;
   boot.zfs.forceImportRoot = false;
 
-  # disable power button turning off the system
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=lock
-    HandleSuspendKey=lock
-    HandleHibernateKey=lock
-    IdleAction=lock
-  '';
-
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
     AllowHibernation=no
