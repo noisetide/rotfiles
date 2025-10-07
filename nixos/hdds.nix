@@ -117,19 +117,20 @@ in {
     ];
 
     # dual boot windows
+    # use `lsblk -f` to find correct windows boot partition uuid
     boot.loader.grub = {
-      # extraEntries = lib.concatStringsSep "\n" (
-      #   lib.optional cfg.windows ''
-      #     menuentry "Windows 10" {
-      #       insmod part_gpt
-      #       insmod ntfs
-      #       insmod search_fs_uuid
-      #       insmod chain
-      #       search --fs-uuid --set=root 703A-A953
-      #       chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-      #     }
-      #   ''
-      # );
+      extraEntries = lib.concatStringsSep "\n" (
+        lib.optional cfg.windows ''
+          menuentry "Windows 10" {
+            insmod part_gpt
+            insmod ntfs
+            insmod search_fs_uuid
+            insmod chain
+            search --fs-uuid --set=root 8CCE-C9D5
+            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+          }
+        ''
+      );
     };
 
     fileSystems = lib.mkIf cfg.enable {
