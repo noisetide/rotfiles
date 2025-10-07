@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
   programs = {
     zathura = {
@@ -26,6 +26,12 @@
       };
     };
   };
+  home.packages = [ pkgs.kdePackages.okular ];
+
+  custom.persist.home.files = [
+    ".config/okularpartrc"
+    ".config/okularrc"
+  ];
 
   custom.wallust.templates.zathurarc = lib.mkIf config.programs.zathura.enable {
     text = ''
