@@ -15,9 +15,6 @@ let
     );
 in
 {
-  # boutique rust packages
-  dotfiles-utils = callPackage ./dotfiles-utils { };
-
   # custom tela built with catppucin variant colors
   tela-dynamic-icon-theme = pkgs.callPackage ./tela-dynamic-icon-theme { };
 

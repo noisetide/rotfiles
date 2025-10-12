@@ -131,7 +131,7 @@
           ddcutil
           sysstat
           scrcpy
-          cmake
+          # cmake
           (python3.withPackages (
             ps:
               with ps; [

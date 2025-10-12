@@ -17,28 +17,12 @@ lib.mkIf cfg.enable {
 
   # toggle / launch waybar
   wayland.windowManager.hyprland.settings.bind = [
-    "$mod, v, exec, ${lib.getExe pkgs.custom.shell.toggle-waybar}"
+    "$mod, v, exec, pkill waybar"
     "$mod_SHIFT, v, exec, waybar"
   ];
 
   custom = {
     shell.packages = {
-      toggle-waybar = pkgs.writeShellApplication {
-        name = "toggle-waybar";
-        runtimeInputs = with pkgs; [
-          procps
-          custom.dotfiles-utils
-          killall
-        ];
-        text = ''
-          # toggle waybar visibility if it is running
-          if pgrep .waybar-wrapped > /dev/null; then
-            killall -SIGUSR1 .waybar-wrapped
-          else
-            launch-waybar
-          fi
-        '';
-      };
       brightness-ddc = pkgs.writeShellApplication {
         name = "brightness-ddc";
         runtimeInputs = with pkgs; [ ddcutil coreutils gnugrep ];
