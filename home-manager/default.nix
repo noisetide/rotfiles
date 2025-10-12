@@ -61,11 +61,8 @@
         lynx
 
         # mcomix
-        yacreader
+        # yacreader
         musescore
-
-        # misc utilities for dotfiles written in rust
-        custom.dotfiles-utils
       ]
       ++ (lib.optional config.custom.helix.enable helix)
       # home-manager executable only on non-nixos

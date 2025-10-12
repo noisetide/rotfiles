@@ -35,7 +35,7 @@ in {
     environment.systemPackages = with pkgs; [
       # USE mcrcon or rcon to connect to server console via rcon.password
       mcrcon
-      rcon
+      # rcon
 
       # my server modpack package
       pkgs.custom.terrafirmagreg

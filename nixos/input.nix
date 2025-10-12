@@ -20,7 +20,7 @@
         ];
       };
     };
-    environment.systemPackages = [pkgs.tagainijisho ];
+    # environment.systemPackages = [pkgs.tagainijisho ];
     custom.persist = {
       home.directories = [
         ".config/fcitx/"
