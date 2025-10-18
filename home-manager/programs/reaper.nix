@@ -30,6 +30,8 @@ config = lib.mkIf config.custom.reaper.enable {
       pkgs.speech-denoiser
       pkgs.mod-distortion
       pkgs.midi-trigger
+      pkgs.sfizz
+      pkgs.carla
       # pkgs.distrho
       pkgs.bshapr
       pkgs.bchoppr

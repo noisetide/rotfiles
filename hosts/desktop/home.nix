@@ -34,16 +34,16 @@
         workspace_names = [ "1" "2" "3" "q" "w" "e"];
         workspaces = [ 1 2 3 5 6 7 ];
       }
-      # {
-      #   display_name_output = "DP-3";
-      #   mode = "2560x1080@200";
-      #   position = "0x0";
-      #   addreserved = "600, 0, 0, 0,";
-      #   scale = 1.0;
-      #   transform = 3;
-      #   workspace_names = [ "a" "s" "d" ];
-      #   workspaces = [ 8 9 10 ];
-      # }
+      {
+        display_name_output = "DP-3";
+        mode = "2560x1080@200";
+        position = "-1080x0";
+        addreserved = "600, 0, 0, 0,";
+        scale = 1.0;
+        transform = 3;
+        workspace_names = [ "a" "s" "d" ];
+        workspaces = [ 8 9 10 ];
+      }
       {
         display_name_output = "HDMI-A-4";
         mode = "2560x1600@60";
