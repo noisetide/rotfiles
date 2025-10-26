@@ -91,6 +91,17 @@ config = lib.mkIf config.custom.reaper.enable {
       };
     };
 
+    # OSC send for muting tracks in REAPER
+    wayland.windowManager.hyprland.settings.bind = [
+      "$mod_ALT, 1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle"
+      "$mod_ALT, 2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle"
+      "$mod_ALT, 3, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/mute/toggle"
+      "$mod_ALT, 4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle"
+      "$mod_ALT, 5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle"
+      "$mod_ALT, 6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle"
+    ];
+
+
     custom.persist = {
       home.directories = [
         ".config/REAPER"
