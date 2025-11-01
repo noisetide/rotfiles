@@ -37,7 +37,7 @@
       enable = true;
       listen = "127.0.0.1:2222";
     };
-    llm.enable = true;
+    llm.enable = false;
     docker.enable = true;
     surrealdb.enable = true;
     # syncoid.enable = true; # TODO

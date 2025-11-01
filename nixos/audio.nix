@@ -46,7 +46,7 @@
       alsa-utils
       pavucontrol
       helvum
-      easyeffects
+      # easyeffects
       pulseaudio
       qjackctl
       qpwgraph

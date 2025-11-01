@@ -32,8 +32,8 @@ let
 in
 lib.mkIf config.custom.llm.enable {
   environment.systemPackages = with pkgs; [
-    ollama
-    ollama-cuda
+    # ollama
+    # ollama-cuda
     # shell-gpt
     # llm
     aichat
@@ -43,7 +43,7 @@ lib.mkIf config.custom.llm.enable {
   networking.firewall.allowedTCPPorts = [8080 9000 11434 8000];
   users.users.${user}.extraGroups = ["render" "video" "ollama"];
 
-  hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit.enable = false;
 
   # ollama
   # docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
@@ -51,8 +51,8 @@ lib.mkIf config.custom.llm.enable {
 
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
-    package = pkgs.ollama-cuda;
+    # acceleration = "cuda";
+    # package = pkgs.ollama-cuda;
     group = "render";
     port = 11434;
     home = "/var/lib/private/ollama";
@@ -69,7 +69,10 @@ lib.mkIf config.custom.llm.enable {
       OLLAMA_NUM_GPU = "999";
       OLLAMA_GPU_OVERHEAD = "1";
       OLLAMA_DEBUG = "1";
-      CUDA_PATH = "${pkgs.lib.makeLibraryPath [pkgs.cudaPackages.cudatoolkit pkgs.cudaPackages.cuda_cudart]}";
+      # CUDA_PATH = "${pkgs.lib.makeLibraryPath [
+        # pkgs.cudaPackages.cudatoolkit
+        # pkgs.cudaPackages.cuda_cudart
+      # ]}";
       LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath additionalPackages}:$LD_LIBRARY_PATH";
     };
   };

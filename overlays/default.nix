@@ -33,18 +33,29 @@ in {
       #   patches = (o.patches or []) ++ [./fastfetch-nixos-old-small.patch];
       # });
 
+      # cudaPackages = prev.cudaPackages_12_6;
+      # cudaPackages_merged = prev.cudaPackages_12_6;
+      # cudaPackages_merged = throw "TRACE: referenced pkgs.cudaPackages_merged";
+      # cudaPackages = prev.cudaPackages // {
+      #   # optional, in case something grabs a specific attr
+      #   cuda_cuobjdump = throw "TRACE: referenced pkgs.cudaPackages.cuda_cuobjdump";
+      # };
 
-      blender = prev.blender.override { cudaSupport = true; };
-      goo-engine = prev.blender.override { cudaSupport = true; };
+      opensubdiv = prev.opensubdiv.override {
+        cudaSupport = false;
+        # cudaPackages = prev.cudaPackages_12_6;
+      };
+      blender = prev.blender.override {
+        cudaSupport = false;
+        # cudaPackages = prev.cudaPackages_12_6;
+      };
 
-      # hyprcursor =
-      #   # assert (
-      #   #   lib.assertMsg (prev.hyprcursor.version == "0.1.5") "hyprcursor: source overlay still needed?"
-      #   # );
-      #   prev.hyprcursor.overrideAttrs (
-      #     o: sources.hyprcursor // {buildInputs = (o.buildInputs or []) ++ [prev.tomlplusplus];}
-      #   );
-
+      # cmake = prev.cmake.overrideAttrs (oldAttrs: {
+      #   cmakeFlags = oldAttrs.cmakeFlags or [] ++ [
+      #     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      #   ];
+      # });
+      
       hyprlock = prev.hyprlock.overrideAttrs (_: sources.hyprlock);
 
       # add default font to silence null font errors
@@ -66,43 +77,6 @@ in {
         patches = (o.patches or []) ++ [./nitch-nix-pkgs-count.patch];
       });
 
-      # use latest commmit from git
-      # swww = prev.swww.overrideAttrs (
-      #   _:
-      #     sources.swww
-      #     // {
-      #       # creating an overlay for buildRustPackage overlay
-      #       # https://discourse.nixos.org/t/is-it-possible-to-override-cargosha256-in-buildrustpackage/4393/3
-      #       cargoDeps = prev.rustPlatform.importCargoLock {
-      #         lockFile = sources.swww.src + "/Cargo.lock";
-      #         allowBuiltinFetchGit = true;
-      #       };
-      #     }
-      # );
-
-    #   wallust = assert (lib.assertMsg (prev.wallust.version == "2.10.0") "wallust: use wallust from nixpkgs?");
-    #     prev.wallust.overrideAttrs (
-    #       o:
-    #         sources.wallust
-    #         // {
-    #           nativeBuildInputs = (o.nativeBuildInputs or []) ++ [prev.installShellFiles];
-
-    #           postInstall = ''
-    #             installManPage man/wallust*
-    #             installShellCompletion --cmd wallust \
-    #               --bash completions/wallust.bash \
-    #               --zsh completions/_wallust \
-    #               --fish completions/wallust.fish
-    #           '';
-
-    #           # creating an overlay for buildRustPackage overlay
-    #           # https://discourse.nixos.org/t/is-it-possible-to-override-cargosha256-in-buildrustpackage/4393/3
-    #           cargoDeps = prev.rustPlatform.importCargoLock {
-    #             lockFile = sources.wallust.src + "/Cargo.lock";
-    #             allowBuiltinFetchGit = true;
-    #           };
-    #         }
-    #     );
     })
     inputs.nix-minecraft.overlay
     inputs.copyparty.overlays.default

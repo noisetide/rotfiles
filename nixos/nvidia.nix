@@ -34,8 +34,8 @@
         package = config.boot.kernelPackages.nvidiaPackages.beta;
       };
       graphics.extraPackages = with pkgs; [
-        vaapiIntel
-        vaapiVdpau
+        intel-vaapi-driver
+        libva-vdpau-driver
         vaapi-intel-hybrid
         libvdpau-va-gl
         intel-vaapi-driver
@@ -65,8 +65,6 @@
         libgbinder
         icu
         glfw
-        glfw-wayland
-
         mesa
         # swiftshader
         egl-wayland
@@ -75,12 +73,11 @@
     environment.systemPackages = with pkgs; [
         icu
         glfw
-        glfw-wayland
         
         mesa
 
-        nvtopPackages.full
-        glxinfo
+        # nvtopPackages.full
+        mesa-demos
         clinfo
         inxi
         drm_info
@@ -93,9 +90,9 @@
         vulkan-validation-layers
         vulkan-utility-libraries
 
-        cudaPackages.cudatoolkit
-        cudaPackages.cudnn
-        cudaPackages.cuda_cudart
+        # cudaPackages.cudatoolkit
+        # cudaPackages.cudnn
+        # cudaPackages.cuda_cudart
 
         linuxHeaders
         libdrm
@@ -119,9 +116,9 @@
     };
 
     nix.settings = {
-      substituters = [ "https://cuda-maintainers.cachix.org" ];
+      # substituters = [ "https://cuda-maintainers.cachix.org" ];
       trusted-public-keys = [
-        "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+        # "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
       ];
     };
   };

@@ -27,9 +27,9 @@
   };
 
   environment.systemPackages = [ pkgs.sbctl ]; # for secure boot
-  environment.variables = {
-    CMAKE_POLICY_VERSION_MINIMUM = "3.5";
-  };
+  # environment.variables = {
+  #   CMAKE_POLICY_VERSION_MINIMUM = "3.5";
+  # };
 
   fonts.packages = config.hm.custom.fonts.packages;
 

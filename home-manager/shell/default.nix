@@ -28,7 +28,7 @@
     dust # better du
     dua
     just
-    mask
+    # mask
     jq
     htmlq
     sd # better sed

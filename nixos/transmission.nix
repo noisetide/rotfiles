@@ -15,6 +15,7 @@ in
       enable = true;
       inherit user home;
       group = "users";
+      package = pkgs.transmission_4;
       settings = {
         alt-speed-down = 50;
         alt-speed-enabled = false;

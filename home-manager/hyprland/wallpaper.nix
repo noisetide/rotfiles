@@ -111,7 +111,7 @@ lib.mkMerge [
       };
     };
   })
-  (lib.mkIf isNixOS { home.packages = [ pkgs.swww pkgs.mpvpaper ]; })
+  (lib.mkIf isNixOS { home.packages = [ pkgs.swww ]; })
   {
     home.shellAliases = {
       current-wallpaper = "command cat $XDG_RUNTIME_DIR/current_wallpaper";

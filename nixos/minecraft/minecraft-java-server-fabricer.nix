@@ -73,7 +73,7 @@ in {
         ExecStart = "${pkgs.lib.getExe cfg.package} ${cfg.jvmOpts}";
         # ExecStart = "./bin/minecraft-server ${cfg.jvmOpts}";
       };
-      preStop = "${pkgs.rcon}/bin/rcon -m -H localhost -p ${toString cfg.serverProperties."rcon.port"} -P ${cfg.serverProperties."rcon.password"} stop";
+      # preStop = "${pkgs.rcon}/bin/rcon -m -H localhost -p ${toString cfg.serverProperties."rcon.port"} -P ${cfg.serverProperties."rcon.password"} stop";
       preStart = ''
         echo "Server Directory $(stat ${cfg.dataDir})"
 

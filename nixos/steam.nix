@@ -14,11 +14,10 @@
           noto-fonts-cjk-sans
           noto-fonts-cjk-serif
           noto-fonts-color-emoji
-          noto-fonts-emoji
           corefonts
           liberation_ttf
           liberation-sans-narrow
-          vistafonts
+          vista-fonts
           carlito
           caladea
           gelasio
@@ -93,7 +92,6 @@
       curl
       krb5
       keyutils
-      glfw-wayland-minecraft
       # path-of-building
       ckan
     ];

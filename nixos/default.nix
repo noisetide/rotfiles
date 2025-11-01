@@ -191,7 +191,7 @@
     # use gtk theme on qt apps
     qt = {
       enable = true;
-      platformTheme = "gnome";
+      platformTheme = null; # was "gnome", but disabling due to qgnomeplatform not building
       style = "adwaita-dark";
     };
 

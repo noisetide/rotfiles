@@ -6,7 +6,7 @@
   inputs,
   ...
 }: let
-  firefoxPkg = pkgs.firefox-wayland;
+  firefoxPkg = pkgs.firefox;
 in {
   config = {
     home.packages = with pkgs; [ librewolf ];

@@ -34,7 +34,7 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # USE mcrcon or rcon to connect to server console via rcon.password
-      mcrcon
+      # mcrcon
       # rcon
 
       # my server modpack package
@@ -76,7 +76,7 @@ in {
       
         ExecStart = "${pkgs.jdk21_headless}/bin/java -jar ./minecraft_server.jar ${cfg.jvmOpts}";
       };
-      preStop = "${pkgs.rcon}/bin/rcon -m -H localhost -p ${toString cfg.serverProperties."rcon.port"} -P ${cfg.serverProperties."rcon.password"} stop";
+      # preStop = "${pkgs.rcon}/bin/rcon -m -H localhost -p ${toString cfg.serverProperties."rcon.port"} -P ${cfg.serverProperties."rcon.password"} stop";
       preStart = ''
         echo "Server Directory $(stat ${cfg.dataDir})"
 

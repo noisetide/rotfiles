@@ -35,6 +35,7 @@
       NIXPKGS_ALLOW_UNFREE = "1";
     };
     
+    
     packages =
       with pkgs;
       [
@@ -51,7 +52,7 @@
         lzip
         ripgrep
         libreoffice
-        onlyoffice-bin
+        onlyoffice-desktopeditors
         zathura
         mupdf
         # digikam
@@ -73,6 +74,7 @@
       ++ (lib.attrValues config.custom.shell.finalPackages);
   };
 
+  nixpkgs.config.allowBroken = true;
 
   # add custom user created shell packages to pkgs.custom.shell
   nixpkgs.overlays = lib.mkIf (!isNixOS) [
