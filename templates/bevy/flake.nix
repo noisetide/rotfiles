@@ -105,7 +105,7 @@
               enable = true;
               channel = "nightly";
               toolchain = {
-                rustc = pkgs.rustc-wasm32;
+                rustc = pkgs.rustc;
               };
               targets = [ "wasm32-unknown-unknown" ];
             };

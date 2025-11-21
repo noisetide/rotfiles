@@ -33,7 +33,10 @@
 
   fonts.packages = config.hm.custom.fonts.packages;
 
-  powerManagement.enable = true;
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "performance";
+  };
 
   systemd.enableEmergencyMode = false;
 

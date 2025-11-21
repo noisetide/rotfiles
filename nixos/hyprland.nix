@@ -26,7 +26,7 @@ lib.mkIf config.custom.hyprland.enable {
   hm.wayland.windowManager.hyprland.enable = true;
 
   # lock hyprland to 0.38.1 until workspace switching is resolved
-  nixpkgs.overlays = [ (_: _prev: { inherit (inputs.hyprland.packages.${pkgs.system}) hyprland; }) ];
+  nixpkgs.overlays = [ (_: _prev: { inherit (inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}) hyprland; }) ];
 
   xdg.portal = {
     enable = true;

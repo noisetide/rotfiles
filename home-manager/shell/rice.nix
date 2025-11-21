@@ -33,7 +33,7 @@
       ninvaders
       wl-color-picker
       umoria
-      inputs.wfetch.packages.${pkgs.system}.wfetch
+      inputs.wfetch.packages.${pkgs.stdenv.hostPlatform.system}.wfetch
       # custom.wl_shimeji
     ];
 

@@ -80,7 +80,10 @@
 
   wayland.windowManager.hyprland.settings = {
     # disable transparency for file delete dialog
-    windowrulev2 = [ "forcergbx,floating:1,class:(nemo)" "forcergbx,floating:1,class:(org.kde.krusader)" ];
+    windowrule = [
+      "match:class nemo, float on, force_rgbx on"
+      "match:class org.kde.krusader, float on, force_rgbx on"
+    ];
   };
 
   custom.persist = {

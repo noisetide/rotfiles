@@ -9,10 +9,12 @@
 config = lib.mkIf config.custom.reaper.enable {
   home = {
     packages = [
-      # The DAW
+      # DAW:
+      # -----
       pkgs.reaper
 
-      # Plugins
+      # PLUGINS:
+      # --------
       pkgs.helm
       # pkgs.sorcer
       pkgs.oxefmsynth
@@ -92,14 +94,20 @@ config = lib.mkIf config.custom.reaper.enable {
     };
 
     # OSC send for muting tracks in REAPER
-    wayland.windowManager.hyprland.settings.bind = [
-      "$mod_ALT, 1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle"
-      "$mod_ALT, 2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle"
-      "$mod_ALT, 3, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/mute/toggle"
-      "$mod_ALT, 4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle"
-      "$mod_ALT, 5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle"
-      "$mod_ALT, 6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle"
-    ];
+    # wayland.windowManager.hyprland.settings.bind = [
+    #   ",XF86Calculator, submap, reaper"
+    # ];
+    # wayland.windowManager.hyprland.extraConfig = ''
+    #     submap = reaper
+    #     bind = , XF86Calculator, submap, reset
+    #     bind = , KP_1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle
+    #     bind = , KP_2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle
+    #     bind = , KP_3, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/mute/toggle
+    #     bind = , KP_4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle
+    #     bind = , KP_5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle
+    #     bind = , KP_6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle
+    #     submap = reset
+    # '';
 
 
     custom.persist = {

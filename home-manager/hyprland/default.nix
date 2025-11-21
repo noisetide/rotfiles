@@ -40,7 +40,7 @@ in {
     # Hyprland plugins go here
     wayland.windowManager.hyprland.plugins = [
       # touchscreen plugin
-      # inputs.hyprgrass.packages.${pkgs.system}.default
+      # inputs.hyprgrass.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     wayland.windowManager.hyprland.importantPrefixes = [ "output" ];
@@ -196,33 +196,32 @@ in {
           "${workspace}, monitor:${monitor}, defaultName:${workspace_name}")
         displays;
 
-      windowrulev2 = [
-        # fix Shijima QT
-        # "noblur,class:Shijima-Qt"
-        # "noborder,class:Shijima-Qt"
-        # "noshadow,class:Shijima-Qt"
-        # "float,class:Shijima-Qt"
-        # "nodim,class:Shijima-Qt"
-        # "pin,class:Shijima-Qt"
-
-        # "dimaround,floating:1"
-        "float,class:(.*menu.*)"
-        "float,class:(.*Minecraft.*)"
-        "bordersize 5,fullscreen:1" # monocle mode
-        "float,class:(wlroots)" # hyprland debug session
-        "float,class:(Waydroid)"
-        "float,class:(QjackCtl)"
-        "float,class:(ayaka-gui)"
-        "float,class:(org.fcitx.)"
-        "float,class:(fl64.exe)"
-        "float,class:(blender)"
-      ];
-
       windowrule = [
+        # Shijima QT (still commented)
+        # "match:class Shijima-Qt, no_blur on"
+        # "match:class Shijima-Qt, decorate off"       # instead of noborder
+        # "match:class Shijima-Qt, no_shadow on"
+        # "match:class Shijima-Qt, float on"
+        # "match:class Shijima-Qt, no_dim on"
+        # "match:class Shijima-Qt, pin on"
+
+        # "match:floating 1, dim_around on"            # old dimaround
+
+        "match:class (.*menu.*), float on"
+        "match:class (.*Minecraft.*), float on"
+        "match:fullscreen 1, border_size 5"            # monocle mode
+        "match:class wlroots, float on"                # hyprland debug session
+        "match:class Waydroid, float on"
+        "match:class QjackCtl, float on"
+        "match:class ayaka-gui, float on"
+        "match:class org.fcitx., float on"
+        "match:class fl64.exe, float on"
+        "match:class blender, float on"
+
         # do not idle while watching videos
-        "idleinhibit focus,class:(librewolf)"
-        "idleinhibit focus,class:(YouTube)"
-        "idleinhibit focus,class:(mpv)"
+        "match:class librewolf, idle_inhibit focus"
+        "match:class YouTube, idle_inhibit focus"
+        "match:class mpv, idle_inhibit focus"
       ];
 
       exec-once = [

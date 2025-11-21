@@ -1,5 +1,5 @@
 {
-  description = "Sawako's rotfiles, - are configuration dotfiles which are managed via NixOS and home-manager";
+  description = "Kyryro's dotfiles, - configuration which is managed via NixOS and home-manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -39,9 +39,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprgrass = {
-      url = "github:horriblename/hyprgrass";
-    };
+    # hyprgrass = {
+    #   url = "github:horriblename/hyprgrass";
+    # };
 
     wfetch = {
       url = "github:iynaix/wfetch";

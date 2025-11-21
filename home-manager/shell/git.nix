@@ -52,14 +52,14 @@ in {
     gh.enable = true;
     git = {
       enable = true;
-      userName = "Kirirou Otomichi";
-      userEmail = "noisetide@proton.me";
       # GPG SIGNING KEY
       signing = lib.mkIf cfg.enable {
         signByDefault = true;
         key = cfg.git-keyid;
       };
-      extraConfig = {
+      settings = {
+        user.name = "Kirirou Otomichi";
+        user.email = "noisetide@proton.me";
         init = {defaultBranch = "master";};
         push.autoSetupRemote = true;
         # remote.origin.push = "HEAD";
@@ -92,8 +92,9 @@ in {
         };
         pull = {rebase = true;};
         push = {default = "simple";};
+
+        aliases = {reword = "!sh git-reword";};
       };
-      aliases = {reword = "!sh git-reword";};
     };
   };
 

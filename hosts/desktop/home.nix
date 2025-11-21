@@ -49,7 +49,7 @@
         mode = "2560x1600@60";
         position = "1920x1440";
         addreserved = "0, 0, 0, 0,";
-        scale = 3.2;
+        scale = 3.33;
         transform = 0;
         workspace_names = [ "z" "x" "c" ];
         workspaces = [ 11 12 13 ];
@@ -124,6 +124,6 @@
     };
   };
   home = {
-    packages = lib.mkIf isNixOS (with pkgs; [ guvcview krita inkscape pureref ]);
+    packages = lib.mkIf isNixOS (with pkgs; [ krita inkscape pureref ]);
   };
 }

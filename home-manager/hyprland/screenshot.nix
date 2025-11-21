@@ -6,7 +6,7 @@
   inputs,
   ...
 }: let
-  focal = inputs.focal.packages.${pkgs.system}.default.override {
+  focal = inputs.focal.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
     ocr = true;
   };
   iso8601 = "%Y-%m-%dT%H:%M:%S%z";

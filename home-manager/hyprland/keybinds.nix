@@ -190,8 +190,8 @@ in
 
         # switches to the next / previous window of the same class
         # hardcoded to SUPER so it doesn't clash on VM
-        "SUPER, Tab, exec, hypr-same-class next"
-        "SUPER_SHIFT, Tab, exec, hypr-same-class prev"
+        # "SUPER, Tab, exec, hypr-same-class next"
+        # "SUPER_SHIFT, Tab, exec, hypr-same-class prev"
 
         # picture in picture mode
         "$mod, p, exec, hypr-pip"

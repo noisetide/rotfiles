@@ -48,7 +48,7 @@
       default = false;
     };
     deadbeef.enable = lib.mkEnableOption "deadbeef" // {
-      default = host == "desktop";
+      default = false;
     };
     helix.enable = lib.mkEnableOption "helix" // {
       default = true;

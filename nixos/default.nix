@@ -181,8 +181,6 @@
 
       # bye bye nano
       nano.enable = lib.mkForce false;
-
-      file-roller.enable = true;
     };
 
     # faster boot times
