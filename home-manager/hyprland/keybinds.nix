@@ -88,8 +88,8 @@ in
         "$mod, 0, workspace, 10" # 10
         "$mod, d, workspace, 10" # d for 10
 
-        "$mod, -, workspace, 11" # -
-        "$mod, z, workspace, 11" # z for 11
+        # "$mod, -, workspace, 11" # -
+        # "$mod, z, workspace, 11" # z for 11
 
         "$mod, x, workspace, 12" # x for 12
 
@@ -123,8 +123,8 @@ in
         "$mod_SHIFT, 0, movetoworkspacesilent, 10" # 10
         "$mod_SHIFT, d, movetoworkspacesilent, 10" # d for 10
 
-        "$mod_SHIFT, -, movetoworkspacesilent, 11" # 11
-        "$mod_SHIFT, z, movetoworkspacesilent, 11" # z for 11
+        # "$mod_SHIFT, -, movetoworkspacesilent, 11" # 11
+        # "$mod_SHIFT, z, movetoworkspacesilent, 11" # z for 11
 
         "$mod_SHIFT, x, movetoworkspacesilent, 12" # x for 12
 

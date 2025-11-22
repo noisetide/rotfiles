@@ -94,20 +94,34 @@ config = lib.mkIf config.custom.reaper.enable {
     };
 
     # OSC send for muting tracks in REAPER
-    # wayland.windowManager.hyprland.settings.bind = [
-    #   ",XF86Calculator, submap, reaper"
-    # ];
-    # wayland.windowManager.hyprland.extraConfig = ''
-    #     submap = reaper
-    #     bind = , XF86Calculator, submap, reset
-    #     bind = , KP_1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle
-    #     bind = , KP_2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle
-    #     bind = , KP_3, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/mute/toggle
-    #     bind = , KP_4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle
-    #     bind = , KP_5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle
-    #     bind = , KP_6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle
-    #     submap = reset
-    # '';
+    wayland.windowManager.hyprland.settings.bind = [
+      "$mod_SHIFT, z, submap, reaper"
+    ];
+    wayland.windowManager.hyprland.extraConfig = ''
+        submap = reaper
+          bind = , z, submap, reset
+          bind = , 1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle
+          bind = , 2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle
+          bind = , 3, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/mute/toggle
+          bind = , 4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle
+          bind = , 5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle
+          bind = , 6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle
+
+          bind = , q, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm/toggle
+          bind = , w, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm/toggle
+          bind = , e, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm/toggle
+          bind = , r, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/recarm/toggle
+          bind = , t, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/recarm/toggle
+          bind = , u, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/recarm/toggle
+
+          bind = , a, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm/toggle
+          bind = , s, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm/toggle
+          bind = , d, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm/toggle
+          bind = , f, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/recarm/toggle
+          bind = , g, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/recarm/toggle
+          bind = , h, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/recarm/toggle
+        submap = reset
+    '';
 
 
     custom.persist = {
