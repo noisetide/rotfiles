@@ -217,6 +217,7 @@ in {
         "match:class org.fcitx., float on"
         "match:class fl64.exe, float on"
         "match:class blender, float on"
+        "match:class anki, float on"
 
         # do not idle while watching videos
         "match:class librewolf, idle_inhibit focus"

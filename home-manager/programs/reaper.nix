@@ -25,6 +25,7 @@ config = lib.mkIf config.custom.reaper.enable {
       pkgs.fluidsynth
       pkgs.airwindows-lv2
       pkgs.mda_lv2
+      pkgs.x42-avldrums
       # pkgs.tunefish
       pkgs.soundfont-generaluser
       pkgs.soundfont-ydp-grand

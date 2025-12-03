@@ -120,10 +120,10 @@
 
     persist = {
       home.files = [ ".config/kritarc" ".config/kritadisplayrc" ];
-      home.directories = [ ".config/PureRef" ];
+      home.directories = [ ".config/PureRef" ".local/share/Anki2" ];
     };
   };
   home = {
-    packages = lib.mkIf isNixOS (with pkgs; [ krita inkscape pureref ]);
+    packages = lib.mkIf isNixOS (with pkgs; [ krita inkscape pureref anki]);
   };
 }
