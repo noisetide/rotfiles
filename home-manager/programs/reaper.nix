@@ -26,6 +26,9 @@ config = lib.mkIf config.custom.reaper.enable {
       pkgs.airwindows-lv2
       pkgs.mda_lv2
       pkgs.x42-avldrums
+      pkgs.rkrlv2
+      pkgs.swh_lv2
+      pkgs.neural-amp-modeler-lv2
       # pkgs.tunefish
       pkgs.soundfont-generaluser
       pkgs.soundfont-ydp-grand
@@ -49,6 +52,12 @@ config = lib.mkIf config.custom.reaper.enable {
       pkgs.molot-lite
       pkgs.bankstown-lv2
       # pkgs.vital
+
+      pkgs.custom.sfizz-lv2
+      # LIB
+      # -------
+      pkgs.expat
+      pkgs.ecasound
     ]
     # NOTE: https://discourse.nixos.org/t/lmms-vst-plugins/42985/3
     # To add it to yabridge, we just have to add the common path for plugins:

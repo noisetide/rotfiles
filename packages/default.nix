@@ -23,6 +23,8 @@ in
   minecraft-bedrock-server = w pkgs.callPackage ./minecraft-bedrock-server { };
   terrafirmagreg = w pkgs.callPackage ./terrafirmagreg { };
 
+  sfizz-lv2 = w pkgs.callPackage ./sfizz-lv2 { };
+
   # custom version of pob with a .desktop entry, overwritten as a custom package
   # as the interaction with passthru is weird
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/games/path-of-building/default.nix
