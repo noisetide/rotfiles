@@ -1,0 +1,6 @@
+[decent-sampler-dynamic]
+# You bump this when a new dynamic build is released.
+src.manual = "1.14.1"
+url.name = "Decent_Sampler-1.14.1-Linux-Dynamic-x86_64.tar.gz"
+
+fetch.url = "https://www.dropbox.com/scl/fi/bsprf1ak5i2dh37zpq91y/Decent_Sampler-1.14.1-Linux-Dynamic-x86_64.tar.gz?rlkey=wr1s23a51mqnvtvinlh8qyr3t&st=0qk15q4u&dl=0"

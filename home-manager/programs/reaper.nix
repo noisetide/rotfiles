@@ -46,13 +46,14 @@ config = lib.mkIf config.custom.reaper.enable {
       pkgs.fverb
       pkgs.mooSpace
       pkgs.boops
-      # pkgs.decent-sampler
       # pkgs.artyFX
       pkgs.zam-plugins
       pkgs.molot-lite
       pkgs.bankstown-lv2
       # pkgs.vital
 
+      # pkgs.decent-sampler
+      pkgs.custom.decent-sampler-dynamic
       pkgs.custom.sfizz-lv2
       # LIB
       # -------

@@ -25,6 +25,8 @@ in
 
   sfizz-lv2 = w pkgs.callPackage ./sfizz-lv2 { };
 
+  decent-sampler-dynamic = w pkgs.callPackage ./decent-sampler-dynamic { };
+
   # custom version of pob with a .desktop entry, overwritten as a custom package
   # as the interaction with passthru is weird
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/games/path-of-building/default.nix

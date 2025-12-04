@@ -1,0 +1,17 @@
+{
+    "decent-sampler-dynamic": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "decent-sampler-dynamic",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "Decent_Sampler-1.14.1-Linux-Dynamic-x86_64.tar.gz",
+            "sha256": "sha256-wVCxFzDxNtxl0x+N8Nu3iZDEg/iEuVX3z4t051DP55E=",
+            "type": "url",
+            "url": "https://www.dropbox.com/scl/fi/bsprf1ak5i2dh37zpq91y/Decent_Sampler-1.14.1-Linux-Dynamic-x86_64.tar.gz?rlkey=wr1s23a51mqnvtvinlh8qyr3t&st=0qk15q4u&dl=0"
+        },
+        "version": "1.14.1"
+    }
+}

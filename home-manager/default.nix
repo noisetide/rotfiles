@@ -56,6 +56,7 @@
         zathura
         mupdf
         # digikam
+        darktable
         trash-cli
         xdg-utils
         zenity
@@ -100,7 +101,7 @@
   };
 
   custom.persist = {
-    home.directories = [ ".config/MuseScore" ".cache/MuseScore" ".config/onlyoffice" ];
+    home.directories = [ ".config/MuseScore" ".config/darktable" ".cache/MuseScore" ".config/onlyoffice" ];
     home.files = [ ".config/digikamrc" ".config/digikam_systemrc"];
   };
 }
