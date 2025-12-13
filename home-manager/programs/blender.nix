@@ -12,7 +12,7 @@
 
       # pkgs.unityhub
 
-      pkgs.gimp
+      # pkgs.gimp
     ];
 
     custom.persist = {
