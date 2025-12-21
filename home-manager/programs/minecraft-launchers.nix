@@ -8,6 +8,7 @@
     home.packages = with pkgs; [
       # Launcher Java
       prismlauncher
+      mcpelauncher-ui-qt
       cubiomes-viewer
       jdk17
       jdt-language-server
@@ -16,6 +17,7 @@
     custom.persist = {
       home.directories = [
         ".local/share/PrismLauncher/"
+        ".local/share/mcpelauncher/"
         ".gradle"
       ];
     };
