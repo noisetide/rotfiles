@@ -13,9 +13,16 @@
 
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" "usbcore" "i2c-dev"];
   boot.initrd.kernelModules = ["i2c-dev" "evdi"];
-  boot.kernelModules = ["kvm-intel" "usbcore" "snd-seq" "snd-rawmidi" "binder_linux" "ashmem_linux" "i915" ];
+  boot.kernelModules = ["kvm-intel" "usbcore" "snd-seq" "snd-rawmidi" "binder_linux" "ashmem_linux" "i915" "v4l2loopback" ];
   boot.blacklistedKernelModules = ["amdgpu"];
-  boot.extraModulePackages = [ config.boot.kernelPackages.evdi ];
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.evdi
+    config.boot.kernelPackages.v4l2loopback
+  ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback devices=1 video_nr=10,20 card_label="Virtual Camera" exclusive_caps=1
+  '';
+
 
   boot.kernelParams = [
     "boot.shell_on_fail"
@@ -64,6 +71,8 @@
       polychromatic
       razergenie
       razer-cli
+
+      v4l-utils
   ];
   users.users.${user}.extraGroups = ["i2c" "plugdev" "openrazer"];
 

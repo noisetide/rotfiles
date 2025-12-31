@@ -25,6 +25,9 @@ config = lib.mkIf config.custom.reaper.enable {
       pkgs.fluidsynth
       pkgs.airwindows-lv2
       pkgs.mda_lv2
+      pkgs.drumkv1
+      pkgs.drumgizmo
+      pkgs.hydrogen
       pkgs.x42-avldrums
       pkgs.rkrlv2
       pkgs.swh_lv2
@@ -106,10 +109,12 @@ config = lib.mkIf config.custom.reaper.enable {
 
     # OSC send for muting tracks in REAPER
     wayland.windowManager.hyprland.settings.bind = [
+      "$mod_SHIFT, z, exec, play -n synth 0.1 sine 300 vol 0.3"
       "$mod_SHIFT, z, submap, reaper"
     ];
     wayland.windowManager.hyprland.extraConfig = ''
         submap = reaper
+          bind = , z, exec, play -n synth 0.1 sine 200 vol 0.3
           bind = , z, submap, reset
           bind = , 1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle
           bind = , 2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle
@@ -117,14 +122,12 @@ config = lib.mkIf config.custom.reaper.enable {
           bind = , 4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle
           bind = , 5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle
           bind = , 6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle
-
           bind = , q, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm/toggle
           bind = , w, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm/toggle
           bind = , e, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm/toggle
           bind = , r, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/recarm/toggle
           bind = , t, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/recarm/toggle
           bind = , u, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/recarm/toggle
-
           bind = , a, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm/toggle
           bind = , s, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm/toggle
           bind = , d, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm/toggle

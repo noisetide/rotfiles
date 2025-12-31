@@ -42,11 +42,11 @@ in {
       # };
 
       opensubdiv = prev.opensubdiv.override {
-        cudaSupport = false;
+        cudaSupport = true;
         # cudaPackages = prev.cudaPackages_12_6;
       };
       blender = prev.blender.override {
-        cudaSupport = false;
+        cudaSupport = true;
         # cudaPackages = prev.cudaPackages_12_6;
       };
 

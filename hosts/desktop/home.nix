@@ -46,13 +46,13 @@
       }
       {
         display_name_output = "HDMI-A-4";
-        mode = "2560x1600@60";
+        mode = "1920x1080@60";
         position = "1920x1440";
         addreserved = "0, 0, 0, 0,";
-        scale = 3.33;
+        scale = 1.0;
         transform = 0;
-        workspace_names = [ "z" "x" "c" ];
-        workspaces = [ 11 12 13 ];
+        workspace_names = [ "x" "c" ];
+        workspaces = [ 12 13 ];
       }
       {
         display_name_output = "DP-2";
@@ -124,6 +124,9 @@
     };
   };
   home = {
-    packages = lib.mkIf isNixOS (with pkgs; [ krita inkscape pureref anki]);
+    packages = lib.mkIf isNixOS (with pkgs; [
+      krita inkscape pureref anki
+      guvcview
+    ]);
   };
 }

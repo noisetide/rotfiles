@@ -49,7 +49,7 @@
     steam.enable = true;
     lutris.enable = false;
   };
-
+  
   systemd.user.services.scrcpy = {
     enable = false;
     description = "Start scrcpy when Motorola G54 5G is connected";

@@ -278,7 +278,7 @@ lib.mkIf cfg.enable {
         };
         "waybar.css" =
           let
-            margin = "12px";
+            margin = "5px";
             baseModuleCss = ''
               font-family: ${config.custom.fonts.monospace};
               font-weight: bold;
@@ -286,7 +286,7 @@ lib.mkIf cfg.enable {
               transition: none;
               color: #fecdb2;
               text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-              border-bottom:  2px solid transparent;
+              border-bottom:  1px solid transparent;
               padding-left: ${margin};
               padding-right: ${margin};
             '';
@@ -321,7 +321,7 @@ lib.mkIf cfg.enable {
 
                 #waybar {
                   background: rgba(0,0,0,0.0);
-                  font-size: 12px;
+                  font-size: 14px;
                   color: #fecdb2;
                 }
 

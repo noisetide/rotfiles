@@ -10,7 +10,9 @@
       pkgs.blender
       # (lib.meta.lowPrio pkgs.custom.goo-engine) # TODO! compiled already
 
-      # pkgs.unityhub
+      pkgs.unityhub
+      pkgs.vrc-get
+      pkgs.openseeface
 
       # pkgs.gimp
     ];
@@ -18,6 +20,10 @@
     custom.persist = {
       home.directories = [
         ".config/blender"
+        ".config/unityhub"
+        ".config/unity3d"
+        ".cache/unityhub"
+        "Unity"
       ];
     };
   };

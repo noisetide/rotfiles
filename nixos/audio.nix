@@ -40,6 +40,10 @@
       extraGroups = ["jackaudio" "audio" ];
     };
 
+    custom.persist.home.directories = [
+      ".config/rncbc.org"
+    ];    
+
     environment.systemPackages = with pkgs; [
       sox
       alsa-lib
@@ -50,7 +54,7 @@
       pulseaudio
       qjackctl
       qpwgraph
-      jack2
+      # jack2
       vmpk # piano
     ];
   };

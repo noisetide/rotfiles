@@ -13,6 +13,9 @@
         ".local/share/flatpak"
         ".var"
       ];
+      root.directories = [
+        "/var/lib/flatpak"
+      ];
     };
   };
 }

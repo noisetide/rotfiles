@@ -39,7 +39,7 @@ in
         dhx = "cd ~/pr/dotfiles & hx .";
         rst = "cd ~/pr/rustpr/ln/";
 
-        hy = "exec Hyprland &> /dev/null";
+        hy = "exec start-hyprland &> /dev/null";
 
         zz = "zellij";
         zj = "zellij";

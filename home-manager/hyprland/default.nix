@@ -242,7 +242,8 @@ in {
       windowrule = [
         # Shijima QT (still commented)
         # "match:class Shijima-Qt, no_blur on"
-        # "match:class Shijima-Qt, decorate off"       # instead of noborder
+        # "match:class Shijima-Qt, decorate off"
+
         # "match:class Shijima-Qt, no_shadow on"
         # "match:class Shijima-Qt, float on"
         # "match:class Shijima-Qt, no_dim on"
@@ -262,10 +263,13 @@ in {
         "match:class blender, float on"
         "match:class anki, float on"
 
+        "match:class SnekStudio, decorate off"
+
         # do not idle while watching videos
         "match:class librewolf, idle_inhibit focus"
         "match:class YouTube, idle_inhibit focus"
         "match:class mpv, idle_inhibit focus"
+        "match:class REAPER, idle_inhibit focus"
       ];
 
       exec-once = [
