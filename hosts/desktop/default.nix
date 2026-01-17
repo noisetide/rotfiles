@@ -47,7 +47,7 @@
     };
     flatpak.enable = true;
     steam.enable = true;
-    lutris.enable = false;
+    lutris.enable = true;
   };
   
   systemd.user.services.scrcpy = {

@@ -114,6 +114,12 @@
       neededForBoot = false;
     };
 
+    networking.firewall = {
+      allowedUDPPorts = [ 11573 ];
+      allowedTCPPorts = [ 11573 ];
+    };
+
+
     custom.persist = {
       home.directories = [
         ".local/share/Steam"

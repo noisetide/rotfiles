@@ -37,10 +37,10 @@
       {
         display_name_output = "DP-3";
         mode = "2560x1080@200";
-        position = "-1080x0";
-        addreserved = "600, 0, 0, 0,";
+        position = "-2560x0";
+        addreserved = "0, 0, 0, 600,";
         scale = 1.0;
-        transform = 3;
+        transform = 0;
         workspace_names = [ "a" "s" "d" ];
         workspaces = [ 8 9 10 ];
       }

@@ -18,7 +18,7 @@
     # wine64
 
     # wine-staging (version with experimental features)
-    wineWowPackages.staging
+    wineWowPackages.stable
 
     # winetricks (all versions)
     winetricks
@@ -28,8 +28,10 @@
     # for audio sync
     wineasio
 
+    vinegar
+
     # native wayland support (unstable)
-    wineWowPackages.waylandFull
+    # wineWowPackages.waylandFull
   ];
   custom.persist = {
     home.directories = [

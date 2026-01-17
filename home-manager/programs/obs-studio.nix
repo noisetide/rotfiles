@@ -7,6 +7,9 @@
   cfg = config.custom.obs-studio;
 in {
   config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.droidcam
+    ];
     programs.obs-studio = {
       enable = true;
 

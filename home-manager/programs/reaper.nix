@@ -53,7 +53,7 @@ config = lib.mkIf config.custom.reaper.enable {
       pkgs.zam-plugins
       pkgs.molot-lite
       pkgs.bankstown-lv2
-      # pkgs.vital
+      pkgs.vital
 
       # pkgs.decent-sampler
       pkgs.custom.decent-sampler-dynamic
@@ -108,6 +108,9 @@ config = lib.mkIf config.custom.reaper.enable {
     };
 
     # OSC send for muting tracks in REAPER
+    # q w e r t y   → ARM ON   (tracks 1–6)
+    # a s d f g h   → ARM OFF  (tracks 1–6)
+
     wayland.windowManager.hyprland.settings.bind = [
       "$mod_SHIFT, z, exec, play -n synth 0.1 sine 300 vol 0.3"
       "$mod_SHIFT, z, submap, reaper"
@@ -116,24 +119,30 @@ config = lib.mkIf config.custom.reaper.enable {
         submap = reaper
           bind = , z, exec, play -n synth 0.1 sine 200 vol 0.3
           bind = , z, submap, reset
-          bind = , 1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle
-          bind = , 2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle
-          bind = , 3, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/mute/toggle
-          bind = , 4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle
-          bind = , 5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle
-          bind = , 6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle
-          bind = , q, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm/toggle
-          bind = , w, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm/toggle
-          bind = , e, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm/toggle
-          bind = , r, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/recarm/toggle
-          bind = , t, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/recarm/toggle
-          bind = , u, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/recarm/toggle
-          bind = , a, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm/toggle
-          bind = , s, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm/toggle
-          bind = , d, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm/toggle
-          bind = , f, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/recarm/toggle
-          bind = , g, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/recarm/toggle
-          bind = , h, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/recarm/toggle
+
+          # bind = , 1, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/mute/toggle
+          # bind = , 2, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/mute/toggle
+          # bind = , 3, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/mute/toggle
+          # bind = , 4, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/mute/toggle
+          # bind = , 5, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/mute/toggle
+          # bind = , 6, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/mute/toggle
+
+          # ARM ON (upper row)
+          bind = , q, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm i 1
+          bind = , w, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm i 1
+          bind = , e, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm i 1
+          bind = , r, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/recarm i 1
+          bind = , t, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/recarm i 1
+          bind = , y, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/recarm i 1
+
+          # ARM OFF (lower row)
+          bind = , a, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/1/recarm i 0
+          bind = , s, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/2/recarm i 0
+          bind = , d, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/3/recarm i 0
+          bind = , f, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/4/recarm i 0
+          bind = , g, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/5/recarm i 0
+          bind = , h, exec, ${pkgs.liblo}/bin/oscsend localhost 9800 /track/6/recarm i 0
+
         submap = reset
     '';
 

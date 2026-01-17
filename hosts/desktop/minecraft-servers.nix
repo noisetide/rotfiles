@@ -46,7 +46,7 @@
     };
 
     services.minecraft-java-servers.terrafirmagreg = {
-      enable = true;
+      enable = false;
       do-run = false;
       autoStart = true;
       dataDir = "/srv/minecraft-java-server-terrafirmagreg";

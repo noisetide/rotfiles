@@ -110,8 +110,14 @@
     openFirewall = true;
   };
 
-  systemd.settings.Manager = {
-    DefaultLimitNOFILE = "524288";
+  systemd.user.extraConfig = ''
+    DefaultLimitNOFILE=524288
+  '';
+  systemd.settings = {
+    Manager = {
+      DefaultLimitNOFILE = "524288";
+      DefaultTimeoutStopSec = "10s";
+    };
   };
   security.pam.loginLimits = [
     {

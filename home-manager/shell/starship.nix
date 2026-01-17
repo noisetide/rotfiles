@@ -39,6 +39,7 @@
       };
       directory = {
         style = "blue";
+
       };
       git_branch = {
         format = "[$branch]($style)";
