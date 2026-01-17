@@ -1,6 +1,11 @@
 { config, lib, pkgs, user, ...}:
 lib.mkMerge [  
 (lib.mkIf config.custom.nginx.enable {
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "noisetide@proton.me";
+  };
+
   services.nginx = {
     enable = true;
     virtualHosts = {

@@ -15,7 +15,6 @@
     keyd.enable = true;
     wine.enable = true;
     distrobox.enable = true;
-    syncoid.enable = true;
     bittorrent.enable = true;
     flatpak.enable = true;
     steam.enable = true;

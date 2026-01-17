@@ -13,7 +13,7 @@
     ./samba.nix
     ./fileshare.nix
     ./monero.nix
-    ./sws.nix # TODO
+    # ./sws.nix # need for later
     ./dns.nix
     ./pr_managment.nix
     ./nginx.nix
@@ -30,9 +30,7 @@
     ./plasma.nix
     ./sops.nix
     ./gh.nix
-    # ./syncoid.nix
     ./transmission.nix
-    ./coolify.nix
     ./users.nix
     ./surrealdb.nix
     ./minecraft

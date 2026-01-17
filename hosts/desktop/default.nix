@@ -33,14 +33,9 @@
     jellyfin.enable = true;
     pr_managment.enable = true;
     nginx.enable = true;
-    static-web-server = {      
-      enable = true;
-      listen = "127.0.0.1:2222";
-    };
     llm.enable = false;
     docker.enable = true;
     surrealdb.enable = true;
-    # syncoid.enable = true; # TODO
     bittorrent = {
       enable = true;
       downloadDir = "/home/${user}/_CURRENT";

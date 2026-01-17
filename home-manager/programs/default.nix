@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    # ./brave.nix
     ./discord.nix
     ./deadbeef.nix
     ./dunst.nix
@@ -15,12 +14,9 @@
     ./obs-studio.nix
     ./irc.nix
     ./kiwix.nix
-    # ./pathofbuilding.nix
     ./rofi.nix
     ./vlc.nix
-    # ./vscode.nix
     ./wallust.nix
-    # ./wezterm.nix
     ./insomnia.nix
     ./yt-dlp.nix
     ./zathura.nix

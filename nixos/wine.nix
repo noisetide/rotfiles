@@ -37,6 +37,7 @@
     home.directories = [
       ".wine"
       ".cache/wine"
+      ".local/share/vinegar"
     ];
   };
 }

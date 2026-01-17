@@ -38,9 +38,6 @@
     telegram.enable = lib.mkEnableOption "telegram-desktop" // {
       default = false;
     };
-    viber.enable = lib.mkEnableOption "viber" // {
-      default = false;
-    };
     reaper.enable = lib.mkEnableOption "reaper" // {
       default = false;
     };
@@ -59,15 +56,8 @@
     obs-studio.enable = lib.mkEnableOption "obs-studio" // {
       default = isNixOS && host == "desktop";
     };
-    pathofbuilding.enable = lib.mkEnableOption "pathofbuilding" // {
-      default = false;
-    };
     rclip.enable = lib.mkEnableOption "rclip";
-    trimage.enable = lib.mkEnableOption "trimage";
     vlc.enable = lib.mkEnableOption "vlc";
-    wezterm.enable = lib.mkEnableOption "wezterm" // {
-      default = isNixOS;
-    };
 
     # MINECRAFT PRISMLAUNCHER
     minecraft-launchers.enable = lib.mkEnableOption "minecraft-prismlauncher + others?" // {

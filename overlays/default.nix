@@ -28,11 +28,6 @@ in {
           inherit inputs;
         });
 
-      # nixos-small logo looks like ass
-      # fastfetch = prev.fastfetch.overrideAttrs (o: {
-      #   patches = (o.patches or []) ++ [./fastfetch-nixos-old-small.patch];
-      # });
-
       # cudaPackages = prev.cudaPackages_12_6;
       # cudaPackages_merged = prev.cudaPackages_12_6;
       # cudaPackages_merged = throw "TRACE: referenced pkgs.cudaPackages_merged";

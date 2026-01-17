@@ -8,14 +8,12 @@
     ./eza.nix
     ./fish.nix
     ./git.nix
-    # ./neovim.nix
     ./nix.nix
     ./rice.nix
     ./rust.nix
     ./shell.nix
     ./starship.nix
     ./tmux.nix
-    # ./typescript.nix # TODO
     ./yazi.nix
   ];
 

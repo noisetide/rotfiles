@@ -101,7 +101,7 @@
         ] (system: fn (createCommonArgs system));
     in
     {
-      nixosConfigurations = (import ./hosts/nixos.nix commonArgs) // (import ./hosts/iso commonArgs);
+      nixosConfigurations = import ./hosts/nixos.nix commonArgs;
 
       homeConfigurations = import ./hosts/hm.nix commonArgs;
 

@@ -15,9 +15,6 @@ let
     );
 in
 {
-  # custom tela built with catppucin variant colors
-  tela-dynamic-icon-theme = pkgs.callPackage ./tela-dynamic-icon-theme { };
-
   distro-grub-themes-nixos = pkgs.callPackage ./distro-grub-themes-nixos { };
 
   minecraft-bedrock-server = w pkgs.callPackage ./minecraft-bedrock-server { };
@@ -31,7 +28,4 @@ in
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/games/path-of-building/default.nix
   rofi-themes = w pkgs.callPackage ./rofi-themes { };
 
-  vv =
-  assert (lib.assertMsg (!lib.hasAttr "vv" pkgs) "vv: vv is in nixpkgs");
-  (w callPackage ./vv { });
 }
