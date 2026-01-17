@@ -32,9 +32,6 @@ in {
       # USE mcrcon or rcon to connect to server console via rcon.password
       mcrcon
       # rcon
-
-      # my server modpack package
-      pkgs.custom.terrafirmagreg
     ];
 
     # ensure data persistence
@@ -100,28 +97,6 @@ in {
       allowedUDPPorts = [serverPort 19132 19133 25585 cfg.serverProperties."rcon.port"];
       allowedTCPPorts = [serverPort 19132 19133 25585 cfg.serverProperties."rcon.port"];
     };
-
-    # services.minecraft-servers = {
-    #   enable = true;
-    #   eula = true;
-    #   openFirewall = true;
-    #   dataDir = "/srv/minecraft";
-    #   environmentFile = cfg.environmentFile;
-    #   servers = {
-    #     terrafirmagreg = let
-    #       cfg = config.custom.services.minecraft-java-servers.terrafirmagreg;
-    #     in {
-    #       enable = cfg.do-run;
-    #       autoStart = cfg.autoStart;
-    #       jvmOpts = cfg.jvmOpts;
-    #       serverProperties = cfg.serverProperties;
-    #       package = pkgs.fabricServers.fabric;
-    #       symlinks = {
-    #         "mods" = "${modpack}/mods";
-    #       };
-    #     };
-    #   };
-    # };
   };
 }
 

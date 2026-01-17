@@ -43,6 +43,7 @@
   };
 in {
   home.packages = [
+    pkgs.codex
     git-reword
     pkgs.delta
     pkgs.lazygit

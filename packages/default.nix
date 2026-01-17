@@ -21,7 +21,6 @@ in
   distro-grub-themes-nixos = pkgs.callPackage ./distro-grub-themes-nixos { };
 
   minecraft-bedrock-server = w pkgs.callPackage ./minecraft-bedrock-server { };
-  terrafirmagreg = w pkgs.callPackage ./terrafirmagreg { };
 
   sfizz-lv2 = w pkgs.callPackage ./sfizz-lv2 { };
 

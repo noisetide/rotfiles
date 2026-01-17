@@ -6,7 +6,6 @@
   ...
 }: {
   imports = [
-    ./minecraft-java-server-terrafirmagreg.nix
     ./minecraft-bedrock-server.nix
     ./minecraft-java-server-fabricer.nix
   ];
