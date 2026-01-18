@@ -34,7 +34,7 @@ in
         options = [
           "defaults"
           "size=1G"
-          "mode=755"
+          "mode=1755"
         ];
       }
     );

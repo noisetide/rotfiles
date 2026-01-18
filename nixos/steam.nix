@@ -107,12 +107,12 @@
     #   neededForBoot = false;
     #   options = ["defaults"];
     # };
-    fileSystems."/md/ramdisk" = {
-      device = "tmpfs";
-      fsType = "tmpfs";
-      options = ["defaults" "size=48G" "mode=777"];
-      neededForBoot = false;
-    };
+    # fileSystems."/md/ramdisk" = {
+    #   device = "tmpfs";
+    #   fsType = "tmpfs";
+    #   options = ["defaults" "size=48G" "mode=777"];
+    #   neededForBoot = false;
+    # };
 
     networking.firewall = {
       allowedUDPPorts = [ 11573 ];

@@ -40,11 +40,11 @@ in
     };
 
     # zfs datasets
-    "/" = {
-      device = "zroot/root";
-      fsType = "zfs";
-      neededForBoot = !persistCfg.tmpfs;
-    };
+    # "/" = {
+    #   device = "zroot/root";
+    #   fsType = "zfs";
+    #   neededForBoot = !persistCfg.tmpfs;
+    # };
 
     "/nix" = {
       device = "zroot/nix";

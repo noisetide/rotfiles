@@ -61,7 +61,7 @@ config = lib.mkIf config.custom.reaper.enable {
       # LIB
       # -------
       pkgs.expat
-      pkgs.ecasound
+      # pkgs.ecasound
     ]
     # NOTE: https://discourse.nixos.org/t/lmms-vst-plugins/42985/3
     # To add it to yabridge, we just have to add the common path for plugins:

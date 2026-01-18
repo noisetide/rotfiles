@@ -96,8 +96,8 @@
           htop
           iotop
           glib
-          jmtpfs
-          mtpfs
+          # jmtpfs
+          # mtpfs
           iftop
           # ventoy
           stress
@@ -133,7 +133,7 @@
           (python3.withPackages (
             ps:
               with ps; [
-                xdis
+                # xdis
               ]
           ))
 

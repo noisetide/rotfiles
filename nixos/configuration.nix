@@ -21,8 +21,8 @@
       enableCryptodisk = true;
       default = "saved";
       theme = pkgs.custom.distro-grub-themes-nixos;
-      gfxmodeBios = "5120x1440";
-      gfxmodeEfi = "5120x1440";
+      gfxmodeBios = "1920x1080";
+      gfxmodeEfi = "1920x1080";
     };
   };
 

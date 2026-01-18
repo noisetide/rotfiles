@@ -149,6 +149,7 @@ in {
   custom.persist = {
     home.directories = [
       ".config/systemd"
+      ".codex"
     ];
   };
 }

@@ -163,6 +163,8 @@ in {
 
       "$mod" = config.custom.hyprland.modkey;
 
+      "mod" = config.custom.hyprland.modkey;
+
       "$term" = "${config.custom.terminal.exec}";
 
       general = let gap = if host == "desktop" then 0 else 2;
