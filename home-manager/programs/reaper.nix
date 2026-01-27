@@ -156,6 +156,7 @@ config = lib.mkIf config.custom.reaper.enable {
         ".lv2"
         ".clap"
         ".local/share/yabridge"
+        ".local/share/Plogue"
         "Synapse Audio"
       ];
     };

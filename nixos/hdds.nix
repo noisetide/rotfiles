@@ -66,6 +66,7 @@ in {
         "file://${home-dir}/_CURRENT/ _CURRENT"
         "file://${wdc-data-mountpoint}/_SMALL/ _SMALL"
         "file://${wdc-data-mountpoint}/_MAIN/ _MAIN"
+        "file://${wdc-data-mountpoint}/_SMALL/ _SMALL"
         "file://${wdc-data-mountpoint}/_MAIN/_NT_STUDIO/ _NT_STUDIO"
         "file://${wdc-data-mountpoint}/_ONLINE_TANK/ _ONLINE_TANK"
 

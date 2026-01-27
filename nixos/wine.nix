@@ -6,7 +6,7 @@
 }: lib.mkIf config.custom.wine.enable {
   environment.systemPackages = with pkgs; [
     # support both 32- and 64-bit applications
-    # wineWowPackages.stable
+    wineWowPackages.stable
 
     # support 32-bit only
     # wine
@@ -18,7 +18,7 @@
     # wine64
 
     # wine-staging (version with experimental features)
-    wineWowPackages.stable
+    # wineWowPackages.stagingFull
 
     # winetricks (all versions)
     winetricks

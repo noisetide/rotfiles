@@ -26,7 +26,7 @@ in {
       # firefox
       (openOnWorkspace 5 "librewolf")
 
-      (openOnWorkspace 12 "$term sh -c 'tenki --fps 60 --tps 60 --show-fps --timer-color yellow --mode rain; exec fish'")
+      # (openOnWorkspace 12 "$term sh -c 'tenki --fps 60 --tps 60 --show-fps --timer-color yellow --mode rain; exec fish'")
 
       # Open Discord
       (openOnWorkspace 1 "vesktop")
