@@ -23,163 +23,163 @@ in
         ", mouse:275, pass, class:^(librewolf)$"
 
         # Exec
-        "$mod, Return, exec, $term"
-        "$mod_SHIFT, Return, exec, rofi -show drun"
+        "SUPER, Return, exec, ${lib.getExe pkgs.kitty}"
+        "SUPER_SHIFT, Return, exec, rofi -show drun"
         # Kill
-        "$mod, BackSpace, killactive,"
-        "$mod_CTRL, BackSpace, exec, hyprctl kill"
+        "SUPER, BackSpace, killactive,"
+        "SUPER_CTRL, BackSpace, exec, hyprctl kill"
         # File
-        "$mod, b, exec, nemo ~/Downloads"
+        "SUPER, b, exec, nemo ~/Downloads"
 
         # exit hyprland
-        "$mod_CTRL, 5, exit,"
+        "SUPER_CTRL, 5, exit,"
 
-        ''$mod_CTRL, Return, exec, rofi -show power-menu -font "${config.custom.fonts.monospace} 14" -modi power-menu:rofi-power-menu''
-        "$mod_CTRL, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        ''SUPER_CTRL, Return, exec, rofi -show power-menu -font "${config.custom.fonts.monospace} 14" -modi power-menu:rofi-power-menu''
+        "SUPER_CTRL, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # reset monitors
         "CTRL_SHIFT, Escape, exec, hypr-monitors"
 
         # reset input language
-        # "$mod_SHIFT, z, exec, fcitx5-remote -s keyboard-jp"
+        # "SUPER_SHIFT, z, exec, fcitx5-remote -s keyboard-jp"
 
         # lighting
-        "$mod_CTRL, a, exec, hyprshade on blue-light-filter"
-        "$mod_CTRL, s, exec, hyprshade off"
-        "$mod_CTRL, d, exec, hyprshade on blue-light-filter2"
+        "SUPER_CTRL, a, exec, hyprshade on blue-light-filter"
+        "SUPER_CTRL, s, exec, hyprshade off"
+        "SUPER_CTRL, d, exec, hyprshade on blue-light-filter2"
 
-        "$mod, Escape, killactive"
+        "SUPER, Escape, killactive"
 
-        "$mod, h, movefocus, l"
-        "$mod, l, movefocus, r"
-        "$mod, k, movefocus, u"
-        "$mod, j, movefocus, d"
+        "SUPER, h, movefocus, l"
+        "SUPER, l, movefocus, r"
+        "SUPER, k, movefocus, u"
+        "SUPER, j, movefocus, d"
 
-        "$mod_SHIFT, h, movewindow, l"
-        "$mod_SHIFT, l, movewindow, r"
-        "$mod_SHIFT, k, movewindow, u"
-        "$mod_SHIFT, j, movewindow, d"
+        "SUPER_SHIFT, h, movewindow, l"
+        "SUPER_SHIFT, l, movewindow, r"
+        "SUPER_SHIFT, k, movewindow, u"
+        "SUPER_SHIFT, j, movewindow, d"
 
-        # Switch workspaces with mainMod
+        # Switch workspaces with SUPER
         # +
         # 1234 -> 1|2|3|4
         # qwe  -> 5|6|7
         # asd  -> 8|9|10
-        "$mod, 1, workspace, 1" # 1
-        "$mod, 2, workspace, 2" # 2
-        "$mod, 3, workspace, 3" # 3
-        "$mod, 4, workspace, 4" # 4
+        "SUPER, 1, workspace, 1" # 1
+        "SUPER, 2, workspace, 2" # 2
+        "SUPER, 3, workspace, 3" # 3
+        "SUPER, 4, workspace, 4" # 4
 
-        "$mod, 5, workspace, 5" # 5
-        "$mod, q, workspace, 5" # q for 5
+        "SUPER, 5, workspace, 5" # 5
+        "SUPER, q, workspace, 5" # q for 5
 
-        "$mod, 6, workspace, 6" # 6
-        "$mod, w, workspace, 6" # w for 6
+        "SUPER, 6, workspace, 6" # 6
+        "SUPER, w, workspace, 6" # w for 6
 
-        "$mod, 7, workspace, 7" # 7
-        "$mod, e, workspace, 7" # e for 7
+        "SUPER, 7, workspace, 7" # 7
+        "SUPER, e, workspace, 7" # e for 7
 
-        "$mod, 8, workspace, 8" # 8
-        "$mod, a, workspace, 8" # a for 8
+        "SUPER, 8, workspace, 8" # 8
+        "SUPER, a, workspace, 8" # a for 8
 
-        "$mod, 9, workspace, 9" # 9
-        "$mod, s, workspace, 9" # s for 9
+        "SUPER, 9, workspace, 9" # 9
+        "SUPER, s, workspace, 9" # s for 9
 
-        "$mod, 0, workspace, 10" # 10
-        "$mod, d, workspace, 10" # d for 10
+        "SUPER, 0, workspace, 10" # 10
+        "SUPER, d, workspace, 10" # d for 10
 
-        # "$mod, -, workspace, 11" # -
-        # "$mod, z, workspace, 11" # z for 11
+        # "SUPER, -, workspace, 11" # -
+        # "SUPER, z, workspace, 11" # z for 11
 
-        "$mod, x, workspace, 12" # x for 12
+        "SUPER, x, workspace, 12" # x for 12
 
-        "$mod, c, workspace, 13" # x for 12
+        "SUPER, c, workspace, 13" # x for 12
 
-        # Move active window to a workspace with mainMod + SHIFT
+        # Move active window to a workspace with SUPER + SHIFT
         # +
         # 1234 -> 1|2|3|4
         # qwe  -> 5|6|7
         # asd  -> 8|9|10
-        "$mod_SHIFT, 1, movetoworkspacesilent, 1" # 1
-        "$mod_SHIFT, 2, movetoworkspacesilent, 2" # 2
-        "$mod_SHIFT, 3, movetoworkspacesilent, 3" # 3
-        "$mod_SHIFT, 4, movetoworkspacesilent, 4" # 4
+        "SUPER_SHIFT, 1, movetoworkspacesilent, 1" # 1
+        "SUPER_SHIFT, 2, movetoworkspacesilent, 2" # 2
+        "SUPER_SHIFT, 3, movetoworkspacesilent, 3" # 3
+        "SUPER_SHIFT, 4, movetoworkspacesilent, 4" # 4
 
-        "$mod_SHIFT, 5, movetoworkspacesilent, 5" # 5
-        "$mod_SHIFT, q, movetoworkspacesilent, 5" # q for 5
+        "SUPER_SHIFT, 5, movetoworkspacesilent, 5" # 5
+        "SUPER_SHIFT, q, movetoworkspacesilent, 5" # q for 5
 
-        "$mod_SHIFT, 6, movetoworkspacesilent, 6" # 6
-        "$mod_SHIFT, w, movetoworkspacesilent, 6" # w for 6
+        "SUPER_SHIFT, 6, movetoworkspacesilent, 6" # 6
+        "SUPER_SHIFT, w, movetoworkspacesilent, 6" # w for 6
 
-        "$mod_SHIFT, 7, movetoworkspacesilent, 7" # 7
-        "$mod_SHIFT, e, movetoworkspacesilent, 7" # e for 7
+        "SUPER_SHIFT, 7, movetoworkspacesilent, 7" # 7
+        "SUPER_SHIFT, e, movetoworkspacesilent, 7" # e for 7
 
-        "$mod_SHIFT, 8, movetoworkspacesilent, 8" # 8
-        "$mod_SHIFT, a, movetoworkspacesilent, 8" # a for 8
+        "SUPER_SHIFT, 8, movetoworkspacesilent, 8" # 8
+        "SUPER_SHIFT, a, movetoworkspacesilent, 8" # a for 8
 
-        "$mod_SHIFT, 9, movetoworkspacesilent, 9" # 9
-        "$mod_SHIFT, s, movetoworkspacesilent, 9" # s for 9
+        "SUPER_SHIFT, 9, movetoworkspacesilent, 9" # 9
+        "SUPER_SHIFT, s, movetoworkspacesilent, 9" # s for 9
 
-        "$mod_SHIFT, 0, movetoworkspacesilent, 10" # 10
-        "$mod_SHIFT, d, movetoworkspacesilent, 10" # d for 10
+        "SUPER_SHIFT, 0, movetoworkspacesilent, 10" # 10
+        "SUPER_SHIFT, d, movetoworkspacesilent, 10" # d for 10
 
-        # "$mod_SHIFT, -, movetoworkspacesilent, 11" # 11
-        # "$mod_SHIFT, z, movetoworkspacesilent, 11" # z for 11
+        # "SUPER_SHIFT, -, movetoworkspacesilent, 11" # 11
+        # "SUPER_SHIFT, z, movetoworkspacesilent, 11" # z for 11
 
-        "$mod_SHIFT, x, movetoworkspacesilent, 12" # x for 12
+        "SUPER_SHIFT, x, movetoworkspacesilent, 12" # x for 12
 
-        "$mod_SHIFT, c, movetoworkspacesilent, 13" # c for 13
+        "SUPER_SHIFT, c, movetoworkspacesilent, 13" # c for 13
 
-        # "$mod_SHIFT, b, layoutmsg, swapwithmaster"
+        # "SUPER_SHIFT, b, layoutmsg, swapwithmaster"
 
         # focus the previous / next desktop in the current monitor (DE style)
-        "$mod_SHIFT_CTRL, h, workspace, m-1"
-        "$mod_SHIFT_CTRL, l, workspace, m+1"
+        "SUPER_SHIFT_CTRL, h, workspace, m-1"
+        "SUPER_SHIFT_CTRL, l, workspace, m+1"
 
         # monocle mode
-        "$mod, n, fullscreen, 1"
+        "SUPER, n, fullscreen, 1"
 
         # fullscreen
-        "$mod, f, fullscreen, 0"
-        # "$mod_SHIFT_CTRL, f, fakefullscreen"
-        "$mod_SHIFT, f, fullscreenstate, -1 2"
+        "SUPER, f, fullscreen, 0"
+        # "SUPER_SHIFT_CTRL, f, fakefullscreen"
+        "SUPER_SHIFT, f, fullscreenstate, -1 2"
 
 
         # floating
-        "$mod, g, togglefloating"
+        "SUPER, g, togglefloating"
 
         # sticky
-        "$mod_CTRL, s, pin"
+        "SUPER_CTRL, s, pin"
 
         # focus next / previous monitor
-        "$mod_CTRL, l, focusmonitor, DP-3"
-        "$mod_CTRL, h, focusmonitor, DP-2"
-        "$mod_CTRL, k, movewindow, DP-2"
-        "$mod_CTRL, j, movewindow, DP-3"
+        "SUPER_CTRL, l, focusmonitor, DP-3"
+        "SUPER_CTRL, h, focusmonitor, DP-2"
+        "SUPER_CTRL, k, movewindow, DP-2"
+        "SUPER_CTRL, j, movewindow, DP-3"
 
         # resize windows
-        "$mod, Left, resizeactive, -50 0"
-        "$mod, Right, resizeactive, 0 50"
-        "$mod, Up, resizeactive, 0 -50"
-        "$mod, Down, resizeactive, 50 0"
+        "SUPER, Left, resizeactive, -50 0"
+        "SUPER, Right, resizeactive, 0 50"
+        "SUPER, Up, resizeactive, 0 -50"
+        "SUPER, Down, resizeactive, 50 0"
 
         # # move to next / previous monitor
-        # "$mod_SHIFT, Left, movewindow, ${
+        # "SUPER_SHIFT, Left, movewindow, ${
         #   if lib.length displays < 3
         #   then "mon:-1"
         #   else "mon:l"
         # }"
-        # "$mod_SHIFT, Right, movewindow, ${
+        # "SUPER_SHIFT, Right, movewindow, ${
         #   if lib.length displays < 3
         #   then "mon:+1"
         #   else "mon:r"
         # }"
-        # "$mod_SHIFT, Up, movewindow, ${
+        # "SUPER_SHIFT, Up, movewindow, ${
         #   if lib.length displays < 3
         #   then "mon:-1"
         #   else "mon:u"
         # }"
-        # "$mod_SHIFT, Down, movewindow, ${
+        # "SUPER_SHIFT, Down, movewindow, ${
         #   if lib.length displays < 3
         #   then "mon:+1"
         #   else "mon:d"
@@ -194,28 +194,28 @@ in
         # "SUPER_SHIFT, Tab, exec, hypr-same-class prev"
 
         # picture in picture mode
-        "$mod, p, exec, hypr-pip"
+        "SUPER, p, exec, hypr-pip"
 
         # add / remove master windows
-        "$mod, m, layoutmsg, addmaster"
-        "$mod_SHIFT, m, layoutmsg, removemaster"
+        "SUPER, m, layoutmsg, addmaster"
+        "SUPER_SHIFT, m, layoutmsg, removemaster"
 
         # rotate via switching master orientation
-        "$mod, r, layoutmsg, orientationcycle left top"
+        "SUPER, r, layoutmsg, orientationcycle left top"
 
         # reload config
-        "$mod_CTRL, r, exec, hyprctl reload"
+        "SUPER_CTRL, r, exec, hyprctl reload"
 
-        # Scroll through existing workspaces with mainMod + scroll
-        "$mod, mouse_down, workspace, e-1"
-        "$mod, mouse_up, workspace, e+1"
+        # Scroll through existing workspaces with SUPER + scroll
+        "SUPER, mouse_down, workspace, e-1"
+        "SUPER, mouse_up, workspace, e+1"
 
         # dunst controls
-        "$mod, grave, exec, dunstctl history-pop"
+        "SUPER, grave, exec, dunstctl history-pop"
 
         # switching wallpapers or themes
-        "$mod, apostrophe, exec, imv-wallpaper"
-        "$mod_SHIFT, comma, exec, rofi-wallust-theme"
+        "SUPER, apostrophe, exec, imv-wallpaper"
+        "SUPER_SHIFT, comma, exec, rofi-wallust-theme"
 
         # special keys
         # "XF86AudioPlay, mpvctl playpause"
@@ -225,18 +225,18 @@ in
         ",XF86AudioRaiseVolume, exec, ${pamixer} -i 5"
         ",XF86AudioMute, exec, ${pamixer} -t"
 
-        "$mod, n, exec, hypr-wallpaper"
+        "SUPER, n, exec, hypr-wallpaper"
       ]
       ++ lib.optionals config.custom.backlight.enable [
         ",XF86MonBrightnessDown, exec, ${lib.getExe pkgs.brightnessctl} set 5%-"
         ",XF86MonBrightnessUp, exec, ${lib.getExe pkgs.brightnessctl} set +5%"
       ];
 
-    # Move/resize windows with mainMod + LMB/RMB and dragging
+    # Move/resize windows with SUPER + LMB/RMB and dragging
     bindm = [
-      # "$mod, mouse:272, movewindow"
-      "$mod, code:49, movewindow"
-      "$mod, mouse:273, resizewindow"
+      # "SUPER, mouse:272, movewindow"
+      "SUPER, code:49, movewindow"
+      "SUPER, mouse:273, resizewindow"
     ];
   };
 }

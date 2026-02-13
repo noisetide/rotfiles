@@ -53,12 +53,12 @@ in {
 
     wayland.windowManager.hyprland.settings = {
       bind = [
-        # "$mod, backslash, exec, grimblast --notify --freeze copy area"
-        # "$mod_SHIFT, backslash, exec, hypr-screenshot"
-        # "$mod_CTRL, backslash, exec, hypr-ocr"
-      "$mod_SHIFT, backslash, exec, focal image --area selection --no-notify --no-save --no-rounded-windows"
-      "$mod, backslash, exec, focal image --edit swappy --rofi --no-rounded-windows"
-      "$mod_CTRL, backslash, exec, focal image --area selection --ocr"
+        # "SUPER, backslash, exec, grimblast --notify --freeze copy area"
+        # "SUPER_SHIFT, backslash, exec, hypr-screenshot"
+        # "SUPER_CTRL, backslash, exec, hypr-ocr"
+      "SUPER_SHIFT, backslash, exec, focal image --area selection --no-notify --no-save --no-rounded-windows"
+      "SUPER, backslash, exec, focal image --edit swappy --rofi --no-rounded-windows"
+      "SUPER_CTRL, backslash, exec, focal image --area selection --ocr"
       ''ALT, backslash, exec, focal video --rofi --no-rounded-windows''
       ];
     };

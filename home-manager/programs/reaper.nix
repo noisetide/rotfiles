@@ -112,8 +112,8 @@ config = lib.mkIf config.custom.reaper.enable {
     # a s d f g h   → ARM OFF  (tracks 1–6)
 
     wayland.windowManager.hyprland.settings.bind = [
-      "$mod_SHIFT, z, exec, play -n synth 0.1 sine 300 vol 0.3"
-      "$mod_SHIFT, z, submap, reaper"
+      "SUPER_SHIFT, z, exec, play -n synth 0.1 sine 300 vol 0.3"
+      "SUPER_SHIFT, z, submap, reaper"
     ];
     wayland.windowManager.hyprland.extraConfig = ''
         submap = reaper

@@ -161,9 +161,9 @@ in {
       # }
       # };
 
-      "$mod" = config.custom.hyprland.modkey;
+      # "$mod" = config.custom.hyprland.modkey;
 
-      "mod" = config.custom.hyprland.modkey;
+      "$mainMod" = "SUPER";
 
       "$term" = "${config.custom.terminal.exec}";
 

@@ -17,8 +17,8 @@ lib.mkIf cfg.enable {
 
   # toggle / launch waybar
   wayland.windowManager.hyprland.settings.bind = [
-    "$mod, v, exec, pkill waybar"
-    "$mod_SHIFT, v, exec, waybar"
+    "SUPER, v, exec, pkill waybar"
+    "SUPER_SHIFT, v, exec, waybar"
   ];
 
   custom = {

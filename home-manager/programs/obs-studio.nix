@@ -16,7 +16,7 @@ in {
       plugins = with pkgs.obs-studio-plugins; [
         wlrobs                    # Screencast capture for Wayland compositors [https://github.com/CatxFish/wlrobs]
         obs-vnc                   # VNC viewer source to display a remote desktop [https://github.com/norihiro/obs-vnc]
-        distroav                  # NDI (Network Device Interface) integration for OBS Studio [https://github.com/DistroAV/DistroAV]
+        # distroav                  # NDI (Network Device Interface) integration for OBS Studio [https://github.com/DistroAV/DistroAV]
         waveform                  # Audio spectral analysis plugin (visualizes audio spectrum) [https://github.com/phandasm/waveform]
         obs-vaapi                 # VAAPI hardware encoding via GStreamer (Linux GPU encoder) [https://github.com/fzwoch/obs-vaapi]
         obs-noise                 # Animated fractal noise source and displacement filter [https://github.com/FiniteSingularity/obs-noise]

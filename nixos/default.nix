@@ -1,4 +1,10 @@
-{ pkgs, config, lib, ... }: {
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
   imports = [
     # hardware
     ./hdds.nix
@@ -53,8 +59,7 @@
         # universal git settings
         "gitconfig".text = config.hm.xdg.configFile."git/config".text;
         # get gparted to use system theme
-        "xdg/gtk-3.0/settings.ini".text =
-          config.hm.xdg.configFile."gtk-3.0/settings.ini".text;
+        "xdg/gtk-3.0/settings.ini".text = config.hm.xdg.configFile."gtk-3.0/settings.ini".text;
       };
 
       # install fish completions for fish
@@ -72,17 +77,26 @@
 
       # use some shell aliases from home manager
       shellAliases = {
-        inherit (config.hm.programs.bash.shellAliases) eza ls ll la lla;
-      } // {
+        inherit (config.hm.programs.bash.shellAliases)
+          eza
+          ls
+          ll
+          la
+          lla
+          ;
+      }
+      // {
         inherit (config.hm.home.shellAliases)
-        # eza related
+          # eza related
 
-        t tree
-        y # yazi
-        ;
+          t
+          tree
+          y # yazi
+          ;
       };
 
-      systemPackages = with pkgs;
+      systemPackages =
+        with pkgs;
         [
           vim
           iptables-legacy
@@ -131,12 +145,32 @@
           scrcpy
           # cmake
           (python3.withPackages (
-            ps:
-              with ps; [
-                # xdis
-              ]
+            ps: with ps; [
+              # xdis
+            ]
           ))
 
+          glib
+          gtk3
+          nss
+          nspr
+          atk
+          at-spi2-atk
+          at-spi2-core
+          mesa
+          libdrm
+          cups
+          libxkbcommon
+          alsa-lib
+          pulseaudio
+          xorg.libX11
+          xorg.libXcomposite
+          xorg.libXdamage
+          xorg.libXfixes
+          xorg.libXrandr
+          xorg.libXcursor
+          xorg.libXi
+          xorg.libXtst
 
           gdb
           scanmem
@@ -147,9 +181,13 @@
           sane-airscan
           simple-scan
           xsane
-        ] ++
-        # install gtk theme for root, some apps like gparted only run as root
-        (with config.hm.gtk; [ theme.package iconTheme.package ])
+        ]
+        ++
+          # install gtk theme for root, some apps like gparted only run as root
+          (with config.hm.gtk; [
+            theme.package
+            iconTheme.package
+          ])
         # add custom user created shell packages
         ++ (lib.attrValues config.custom.shell.finalPackages)
         ++ (lib.optional config.hm.custom.helix.enable helix)
@@ -160,15 +198,13 @@
     nixpkgs.overlays = [
       (_: prev: {
         custom = prev.custom // {
-          shell = config.custom.shell.finalPackages
-            // config.hm.custom.shell.finalPackages;
+          shell = config.custom.shell.finalPackages // config.hm.custom.shell.finalPackages;
         };
       })
     ];
 
     # setup fonts
-    fonts.packages = config.hm.custom.fonts.packages
-      ++ [ pkgs.custom.rofi-themes ];
+    fonts.packages = config.hm.custom.fonts.packages ++ [ pkgs.custom.rofi-themes ];
 
     programs = {
       # use same config as home-manager
@@ -200,8 +236,7 @@
     };
 
     custom.persist = {
-      root.directories =
-        lib.mkIf config.hm.custom.wifi.enable [ "/etc/NetworkManager" ];
+      root.directories = lib.mkIf config.hm.custom.wifi.enable [ "/etc/NetworkManager" ];
 
       home.directories = [ ".local/state/wireplumber" ];
     };

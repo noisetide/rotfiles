@@ -41,7 +41,7 @@ in {
       # (openOnWorkspace 9 "easyeffects")
 
       # download desktop
-      (openOnWorkspace 10 "$term ~/_CURRENT")
+      (openOnWorkspace 10 "${lib.getExe pkgs.kitty} ~/_CURRENT")
       (openOnWorkspace 10 "nemo ~/_CURRENT")
       (openOnWorkspace 10 "transmission-remote-gtk")
       (openOnWorkspace 10 "liferea")
