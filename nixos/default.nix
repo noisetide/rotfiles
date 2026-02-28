@@ -177,6 +177,8 @@
 
           wayvnc
 
+          jdk25
+
           cups-pdf-to-pdf
           sane-airscan
           simple-scan

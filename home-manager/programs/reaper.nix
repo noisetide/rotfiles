@@ -12,6 +12,7 @@ config = lib.mkIf config.custom.reaper.enable {
       # DAW:
       # -----
       pkgs.reaper
+      pkgs.reaper-sws-extension
 
       # PLUGINS:
       # --------

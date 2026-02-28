@@ -126,6 +126,7 @@
   home = {
     packages = lib.mkIf isNixOS (with pkgs; [
       krita inkscape pureref anki
+      teamspeak6-client
       guvcview
     ]);
   };

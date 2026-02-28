@@ -33,7 +33,7 @@
     jellyfin.enable = true;
     pr_managment.enable = true;
     nginx.enable = true;
-    llm.enable = false;
+    llm.enable = true;
     docker.enable = true;
     surrealdb.enable = true;
     bittorrent = {

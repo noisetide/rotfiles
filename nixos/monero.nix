@@ -10,7 +10,7 @@
     ];
 
     services.monero = {
-      enable = true;
+      enable = false;
       dataDir = "/md/wdc-okii/_XMR";
       mining = {
         enable = false;
